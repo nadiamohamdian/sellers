@@ -257,24 +257,12 @@ export default function LoginPage() {
                         src="/icons/Group 45650.svg"
                         alt="brand stripe"
                         style={{
-                            width: "180px",
-                            height: "40px",
+                            width: "260px",
+                            height: "auto",
                             objectFit: "contain",
                             marginBottom: "20px",
                         }}
                     />
-
-                    {/* متن SELLER CENTER */}
-                    <div
-                        style={{
-                            color: "white",
-                            fontSize: "20px",
-                            fontWeight: 700,
-                            marginBottom: "30px",
-                        }}
-                    >
-                        SELLER CENTER
-                    </div>
 
                     {/* تصویر 3D */}
                     <img
