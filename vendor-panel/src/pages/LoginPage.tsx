@@ -86,7 +86,8 @@ export default function LoginPage() {
                             fontSize: "28px",
                             fontWeight: 700,
                             marginBottom: "20px",
-                            textAlign: "right",
+                            margin: "0 auto",
+                            textAlign: "center",
                         }}
                     >
                         ورود یا ثبت نام
@@ -100,7 +101,7 @@ export default function LoginPage() {
                             fontWeight: 400,
                             lineHeight: "1.6",
                             marginBottom: "40px",
-                            textAlign: "right",
+                            textAlign: "center",
                         }}
                     >
                         {step === "phone" ? (
@@ -124,7 +125,7 @@ export default function LoginPage() {
                             fontSize: "16px",
                             fontWeight: 400,
                             marginBottom: "10px",
-                            textAlign: "right",
+                            textAlign: "center",
                         }}
                     >
                         {step === "phone" ? "شماره موبایل با ایمیل" : "کد تأیید ۶ رقمی"}
