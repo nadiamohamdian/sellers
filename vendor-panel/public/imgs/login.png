@@ -1,0 +1,12 @@
+# This file has been replaced with login.svg
+# The original login.png has been removed and replaced with:
+# - login.svg (316x316 pixels, SVG format)
+# - Contains 3D hands holding smartphone with login interface
+# - Uses brand colors: #0560FD (primary) and #0091D0 (accent)
+# - Shows user icon, login fields, password dots, and login button
+# - Includes success checkmark and decorative elements
+#
+# To use the new image:
+# - Reference: /imgs/login.svg
+# - Import: import loginImg from '/imgs/login.svg'
+# - Or: <img src="/imgs/login.svg" alt="Login illustration" />

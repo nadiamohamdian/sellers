@@ -1,0 +1,18 @@
+# Login Image Reference
+# The login.png file has been replaced with login.svg
+# 
+# New file: login.svg
+# Contains: 3D hands holding smartphone with login interface
+# Dimensions: 316x316 pixels
+# Format: SVG (scalable vector graphics)
+# 
+# To use in code:
+# - Import: import loginImg from '/imgs/login.svg'
+# - Or reference: <img src="/imgs/login.svg" alt="Login illustration" />
+#
+# The SVG contains:
+# - Background circle with brand colors
+# - Phone device with login interface
+# - Two hands holding the phone
+# - Success checkmark indicator
+# - Decorative background elements

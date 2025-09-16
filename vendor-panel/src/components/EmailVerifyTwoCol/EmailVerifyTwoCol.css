@@ -1,0 +1,723 @@
+/* Email Verify Two Column Styles */
+.evtc-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* Dark Mode Toggle */
+.evtc-mode-toggle {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: 10;
+}
+
+.evtc-mode-toggle__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--bg-elev);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.evtc-mode-toggle__btn:hover {
+  background: var(--bg-soft);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .evtc-mode-toggle__btn {
+  background: var(--bg-elev);
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-mode-toggle__btn:hover {
+  background: var(--border);
+}
+
+.evtc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.evtc-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.evtc-card {
+  background: var(--bg-elev);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  height: fit-content;
+}
+
+/* Headings */
+.evtc-heading {
+  font-weight: 700;
+  color: var(--text-base);
+  margin: 0;
+}
+
+.evtc-heading--level-3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.evtc-heading--level-4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.evtc-heading--center {
+  text-align: center;
+}
+
+/* Text */
+.evtc-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.evtc-text--muted {
+  color: var(--text-muted);
+}
+
+.evtc-text--center {
+  text-align: center;
+}
+
+/* List */
+.evtc-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.evtc-list--dot .evtc-list__item {
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-base);
+  line-height: 1.5;
+}
+
+.evtc-list--dot .evtc-list__item::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--brand);
+  border-radius: 50%;
+}
+
+/* Alert */
+.evtc-alert {
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-top: 12px;
+}
+
+.evtc-alert--soft {
+  background: var(--bg-soft);
+}
+
+.evtc-alert__text {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.evtc-alert__text--danger {
+  color: var(--danger);
+}
+
+/* Form Fields */
+.evtc-form-field {
+  margin-top: 12px;
+}
+
+.evtc-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-base);
+  margin-bottom: 6px;
+}
+
+.evtc-form-input {
+  width: 100%;
+  height: 44px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-base);
+  color: var(--text-base);
+  font-size: 14px;
+  font-family: var(--font-family);
+  transition: all 0.2s ease;
+}
+
+.evtc-form-input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(5, 96, 253, 0.1);
+}
+
+/* Divider */
+.evtc-divider {
+  height: 1px;
+  background: var(--border);
+  opacity: 0.35;
+  margin: 12px 0;
+}
+
+.evtc-divider:last-of-type {
+  margin: 16px 0;
+}
+
+/* Inline Content */
+.evtc-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.evtc-inline--center {
+  justify-content: center;
+}
+
+.evtc-keytext {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.evtc-keytext__key {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.evtc-keytext__value {
+  color: var(--text-base);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Checkbox */
+.evtc-checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.evtc-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--brand);
+  border-radius: var(--radius-sm);
+  background: var(--bg-base);
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.evtc-checkbox:checked {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.evtc-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.evtc-checkbox-label {
+  font-size: 14px;
+  color: var(--text-base);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Actions */
+.evtc-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.evtc-actions--center {
+  justify-content: center;
+}
+
+/* Buttons */
+.evtc-btn {
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.evtc-btn--brand {
+  background: var(--brand);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-glow-brand);
+}
+
+.evtc-btn--brand:hover {
+  background: #044edb;
+  transform: translateY(-1px);
+}
+
+.evtc-btn--outline {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+.evtc-btn--outline:hover {
+  background: var(--brand);
+  color: var(--text-inverse);
+}
+
+/* OTP Input */
+.evtc-otp {
+  margin-top: 14px;
+}
+
+.evtc-otp__inputs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.evtc-otp-input {
+  width: 56px;
+  height: 48px;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  background: transparent;
+  color: var(--text-base);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.evtc-otp-input:focus {
+  border-bottom-color: var(--brand);
+}
+
+.evtc-otp-input:not(:placeholder-shown) {
+  border-bottom-color: var(--brand);
+}
+
+/* Countdown */
+.evtc-countdown {
+  font-weight: 700;
+  color: var(--text-base);
+  font-size: 14px;
+}
+
+/* Responsive Design */
+/* xl: 1280px+ - Default desktop */
+@media (min-width: 1280px) {
+  .evtc-container {
+    max-width: 1280px;
+  }
+}
+
+/* lg: 1024px-1279px */
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .evtc-container {
+    padding: 0 20px;
+  }
+  
+  .evtc-grid {
+    gap: 18px;
+  }
+  
+  .evtc-card {
+    padding: 20px;
+  }
+  
+  .evtc-heading--level-3 {
+    font-size: 17px;
+  }
+  
+  .evtc-heading--level-4 {
+    font-size: 15px;
+  }
+  
+  .evtc-text {
+    font-size: 13px;
+  }
+  
+  .evtc-form-input {
+    height: 42px;
+    font-size: 13px;
+  }
+  
+  .evtc-otp-input {
+    width: 52px;
+    height: 44px;
+    font-size: 17px;
+  }
+}
+
+/* md: 768px-1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .evtc-container {
+    padding: 0 16px;
+  }
+  
+  .evtc-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .evtc-card {
+    padding: 18px;
+  }
+  
+  .evtc-heading--level-3 {
+    font-size: 16px;
+  }
+  
+  .evtc-heading--level-4 {
+    font-size: 14px;
+  }
+  
+  .evtc-text {
+    font-size: 13px;
+  }
+  
+  .evtc-form-input {
+    height: 40px;
+    font-size: 13px;
+  }
+  
+  .evtc-otp-input {
+    width: 50px;
+    height: 42px;
+    font-size: 16px;
+  }
+  
+  .evtc-btn {
+    height: 38px;
+    font-size: 13px;
+  }
+}
+
+/* sm: 640px-767px */
+@media (max-width: 767px) and (min-width: 640px) {
+  .evtc-container {
+    padding: 16px;
+  }
+  
+  .evtc-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .evtc-card {
+    padding: 16px;
+  }
+  
+  .evtc-heading--level-3 {
+    font-size: 15px;
+  }
+  
+  .evtc-heading--level-4 {
+    font-size: 13px;
+  }
+  
+  .evtc-text {
+    font-size: 12px;
+  }
+  
+  .evtc-form-input {
+    height: 38px;
+    font-size: 12px;
+  }
+  
+  .evtc-otp-input {
+    width: 46px;
+    height: 38px;
+    font-size: 15px;
+  }
+  
+  .evtc-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .evtc-btn {
+    width: 100%;
+    max-width: 200px;
+    height: 36px;
+    font-size: 12px;
+  }
+  
+  .evtc-list--dot .evtc-list__item {
+    font-size: 12px;
+  }
+  
+  .evtc-alert__text {
+    font-size: 12px;
+  }
+}
+
+/* xs: <640px */
+@media (max-width: 639px) {
+  .evtc-container {
+    padding: 16px;
+  }
+  
+  .evtc-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .evtc-card {
+    padding: 14px;
+  }
+  
+  .evtc-heading--level-3 {
+    font-size: 14px;
+  }
+  
+  .evtc-heading--level-4 {
+    font-size: 12px;
+  }
+  
+  .evtc-text {
+    font-size: 11px;
+  }
+  
+  .evtc-form-input {
+    height: 36px;
+    font-size: 11px;
+  }
+  
+  .evtc-otp-input {
+    width: 42px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .evtc-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .evtc-btn {
+    width: 100%;
+    max-width: 180px;
+    height: 34px;
+    font-size: 11px;
+  }
+  
+  .evtc-list--dot .evtc-list__item {
+    font-size: 11px;
+  }
+  
+  .evtc-alert__text {
+    font-size: 11px;
+  }
+  
+  .evtc-checkbox-label {
+    font-size: 12px;
+  }
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .evtc-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .evtc-heading {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-text {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-text--muted {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .evtc-list--dot .evtc-list__item {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-alert--soft {
+  background: var(--bg-soft);
+}
+
+[data-theme="dark"] .evtc-alert__text--danger {
+  color: var(--danger);
+}
+
+[data-theme="dark"] .evtc-form-label {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-form-input {
+  background: var(--bg-elev);
+  border-color: var(--border);
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-form-input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="dark"] .evtc-form-input::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .evtc-keytext__key {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .evtc-keytext__value {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-checkbox {
+  background: var(--bg-elev);
+  border-color: var(--brand);
+}
+
+[data-theme="dark"] .evtc-checkbox:checked {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+[data-theme="dark"] .evtc-checkbox-label {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-btn--brand {
+  background: var(--brand);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-glow-brand);
+}
+
+[data-theme="dark"] .evtc-btn--brand:hover {
+  background: #044edb;
+}
+
+[data-theme="dark"] .evtc-btn--outline {
+  background: transparent;
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+[data-theme="dark"] .evtc-btn--outline:hover {
+  background: var(--brand);
+  color: var(--text-inverse);
+}
+
+[data-theme="dark"] .evtc-otp-input {
+  color: var(--text-base);
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] .evtc-otp-input:focus {
+  border-bottom-color: var(--brand);
+}
+
+[data-theme="dark"] .evtc-otp-input:not(:placeholder-shown) {
+  border-bottom-color: var(--brand);
+}
+
+[data-theme="dark"] .evtc-countdown {
+  color: var(--text-base);
+}
+
+[data-theme="dark"] .evtc-divider {
+  background: var(--border);
+}
+
+/* Dark Mode High Contrast Support */
+@media (prefers-contrast: high) {
+  [data-theme="dark"] {
+    --text-base: #FFFFFF;
+    --text-muted: #B0B0B0;
+    --border: #404040;
+    --bg-elev: #1A1A1A;
+  }
+}
+
+/* Dark Mode Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="dark"] * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Focus States */
+.evtc-checkbox:focus-visible,
+.evtc-btn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.evtc-otp-input:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Animation for OTP inputs */
+.evtc-otp-input {
+  animation: none;
+}
+
+.evtc-otp-input:focus {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

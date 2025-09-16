@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل فروشنده - پروفایل</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Layout Shell -->
+    <div class="vp-layout-shell">
+        <!-- Header -->
+        <header class="vp-layout-header">
+            <div class="vp-layout-header__content">
+                <!-- Right side content -->
+                <div class="vp-layout-header__right">
+                    <div class="vp-layout-header__item">
+                        <span class="vp-layout-header__text">نام فروشنده</span>
+                    </div>
+                    <div class="vp-layout-header__item">
+                        <div class="vp-layout-header__avatar vp-layout-header__avatar--brand"></div>
+                    </div>
+                </div>
+
+                <!-- Left side content -->
+                <div class="vp-layout-header__left">
+                    <div class="vp-layout-header__item">
+                        <button class="vp-layout-header__icon-btn">
+                            <img src="/img/placeholder-upload.svg" alt="" class="vp-layout-header__icon">
+                        </button>
+                    </div>
+                    <div class="vp-layout-header__item">
+                        <button class="vp-layout-header__icon-btn">
+                            <img src="/img/placeholder-bell.svg" alt="" class="vp-layout-header__icon">
+                            <span class="vp-layout-header__badge vp-layout-header__badge--brand">24</span>
+                        </button>
+                    </div>
+                    <button class="vp-layout-header__mode-toggle" data-mode-toggle>
+                        🌙
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="vp-layout-body">
+            <!-- Sidebar -->
+            <aside class="vp-sidebar">
+                <div class="vp-sidebar__header">
+                    <div class="vp-sidebar__avatar"></div>
+                </div>
+                
+                <nav class="vp-sidebar__nav">
+                    <!-- پیشخوان Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">پیشخوان</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor" class="vp-nav-item vp-nav-item--active">
+                                    <img src="/img/placeholder-dashboard.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">پیشخوان</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- کالا Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">کالا</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/search" class="vp-nav-item">
+                                    <img src="/img/placeholder-search.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">جستجو و ثبت کالا</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/manage" class="vp-nav-item">
+                                    <img src="/img/placeholder-variant.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت کالا و افزودن تنوع</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/pricing" class="vp-nav-item">
+                                    <img src="/img/placeholder-pricing.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت تنوع و قیمت گذاری</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/stock" class="vp-nav-item">
+                                    <img src="/img/placeholder-inventory.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">گزارش موجودی کالا</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- سفارش‌ها Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">سفارش‌ها</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/orders/open" class="vp-nav-item">
+                                    <img src="/img/placeholder-orders.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت سفارشات جاری</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/orders/history" class="vp-nav-item">
+                                    <img src="/img/placeholder-history.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">تاریخچه سفارشات</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- مالی Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">مالی</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/billing" class="vp-nav-item">
+                                    <img src="/img/placeholder-billing.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">صورتحساب ها</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- تحلیل عملکرد Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">تحلیل عملکرد</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/analytics" class="vp-nav-item">
+                                    <img src="/img/placeholder-analytics.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">فروش و درآمد</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/returns" class="vp-nav-item">
+                                    <img src="/img/placeholder-return.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مرجوعی</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- راهنما Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">راهنما</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/academy" class="vp-nav-item">
+                                    <img src="/img/placeholder-academy.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مرکز آموزش فروشندگان</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/restricted" class="vp-nav-item">
+                                    <img src="/img/placeholder-restricted.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">کالاهای غیرمجاز</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- پشتیبانی Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">پشتیبانی</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/support" class="vp-nav-item">
+                                    <img src="/img/placeholder-support.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">درخواست پشتیبانی</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <button class="vp-sidebar__toggle" aria-label="بستن منو">
+                    ←
+                </button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="vp-layout-main">
+                <div class="vp-layout-content">
+                    <!-- Profile Stepper -->
+                    <div class="vp-profile-stepper">
+                        <div class="vp-profile-stepper__container">
+                            <div class="vp-profile-stepper__card">
+                                <div class="vp-profile-stepper__steps">
+                                    <!-- Step 1: پروفایل (Current) -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--current vp-profile-stepper__step--accent-brand">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-user.svg" alt="پروفایل" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">پروفایل</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-profile-stepper__separator vp-profile-stepper__separator--line"></div>
+
+                                    <!-- Step 2: تایید ایمیل -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--next">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-mail.svg" alt="تایید ایمیل" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">تایید ایمیل</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-profile-stepper__separator vp-profile-stepper__separator--line"></div>
+
+                                    <!-- Step 3: ارسال قرارداد -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--next">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-contract.svg" alt="ارسال قرارداد" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">ارسال قرارداد</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-profile-stepper__separator vp-profile-stepper__separator--line"></div>
+
+                                    <!-- Step 4: ثبت شماره حساب -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--next">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-bank.svg" alt="ثبت شماره حساب" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">ثبت شماره حساب</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-profile-stepper__separator vp-profile-stepper__separator--line"></div>
+
+                                    <!-- Step 5: ارسال مدارک -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--next">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-docs.svg" alt="ارسال مدارک" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">ارسال مدارک</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-profile-stepper__separator vp-profile-stepper__separator--line"></div>
+
+                                    <!-- Step 6: آموزش -->
+                                    <div class="vp-profile-stepper__step vp-profile-stepper__step--next">
+                                        <div class="vp-profile-stepper__icon">
+                                            <img src="/img/placeholder-play.svg" alt="آموزش" class="vp-profile-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-profile-stepper__content">
+                                            <span class="vp-profile-stepper__label">آموزش</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Two Column Layout -->
+                    <div class="vp-profile-two-col">
+                        <div class="vp-profile-two-col__container">
+                            <div class="vp-profile-two-col__grid">
+                                <!-- Left Column - Uploads Card -->
+                                <div class="vp-profile-two-col__column">
+                                    <div class="vp-profile-two-col__card">
+                                        <!-- Banner -->
+                                        <div class="vp-profile-two-col__banner">
+                                            <div class="vp-profile-two-col__banner-overlap-avatar"></div>
+                                        </div>
+
+                                        <!-- Upload Grid -->
+                                        <div class="vp-profile-two-col__upload-grid">
+                                            <div class="vp-profile-two-col__upload-item">
+                                                <input type="file" id="upload-logo" accept=".png,.jpg,.svg" class="vp-profile-two-col__upload-input">
+                                                <label for="upload-logo" class="vp-profile-two-col__upload-label vp-profile-two-col__upload-label--dashed">
+                                                    <div class="vp-profile-two-col__upload-content">
+                                                        <div class="vp-profile-two-col__upload-icon">📁</div>
+                                                        <div class="vp-profile-two-col__upload-text">
+                                                            <div>آپلود لوگو</div>
+                                                            <div>180×180</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="vp-profile-two-col__upload-item">
+                                                <input type="file" id="upload-banner" accept=".png,.jpg,.svg" class="vp-profile-two-col__upload-input">
+                                                <label for="upload-banner" class="vp-profile-two-col__upload-label vp-profile-two-col__upload-label--dashed">
+                                                    <div class="vp-profile-two-col__upload-content">
+                                                        <div class="vp-profile-two-col__upload-icon">📁</div>
+                                                        <div class="vp-profile-two-col__upload-text">
+                                                            <div>آپلود بنر بزرگ</div>
+                                                            <div>1280×380</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="vp-profile-two-col__actions">
+                                            <button class="vp-profile-two-col__btn vp-profile-two-col__btn--soft">تغییر شماره موبایل</button>
+                                            <button class="vp-profile-two-col__btn vp-profile-two-col__btn--soft">تغییر رمز عبور</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column - Profile Form Card -->
+                                <div class="vp-profile-two-col__column">
+                                    <div class="vp-profile-two-col__card">
+                                        <form class="vp-profile-two-col__form">
+                                            <!-- Header with Segmented Control -->
+                                            <div class="vp-profile-two-col__form-header">
+                                                <h4 class="vp-profile-two-col__form-title">اطلاعات کاربری شما</h4>
+                                                <div class="vp-profile-two-col__segmented">
+                                                    <button type="button" class="vp-profile-two-col__segmented-option vp-profile-two-col__segmented-option--active">حقیقی</button>
+                                                    <button type="button" class="vp-profile-two-col__segmented-option">حقوقی</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Form Grid -->
+                                            <div class="vp-profile-two-col__form-grid">
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">نام کاربری</label>
+                                                    <input type="text" name="username" class="vp-profile-two-col__form-input">
+                                                </div>
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">نام</label>
+                                                    <input type="text" name="first_name" class="vp-profile-two-col__form-input">
+                                                </div>
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">نام خانوادگی</label>
+                                                    <input type="text" name="last_name" class="vp-profile-two-col__form-input">
+                                                </div>
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">نام نمایشی</label>
+                                                    <input type="text" name="display_name" class="vp-profile-two-col__form-input">
+                                                </div>
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">تاریخ تولد</label>
+                                                    <input type="date" name="birthdate" class="vp-profile-two-col__form-input">
+                                                </div>
+                                                <div class="vp-profile-two-col__form-field">
+                                                    <label class="vp-profile-two-col__form-label">جنسیت</label>
+                                                    <select name="gender" class="vp-profile-two-col__form-select">
+                                                        <option value="">نامشخص</option>
+                                                        <option value="female">زن</option>
+                                                        <option value="male">مرد</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Divider -->
+                                            <div class="vp-profile-two-col__divider"></div>
+
+                                            <!-- Bio Textarea -->
+                                            <div class="vp-profile-two-col__form-field vp-profile-two-col__form-field--full">
+                                                <label class="vp-profile-two-col__form-label">متن بیوگرافی</label>
+                                                <textarea name="bio" rows="5" class="vp-profile-two-col__form-textarea"></textarea>
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <div class="vp-profile-two-col__form-actions">
+                                                <button type="submit" class="vp-profile-two-col__btn vp-profile-two-col__btn--brand">
+                                                    <img src="/img/placeholder-check.svg" alt="" class="vp-profile-two-col__btn-icon">
+                                                    ثبت اطلاعات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modeToggle = document.querySelector('[data-mode-toggle]');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                modeToggle.textContent = '☀️';
+            }
+            
+            modeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    html.removeAttribute('data-theme');
+                    modeToggle.textContent = '🌙';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    modeToggle.textContent = '☀️';
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // Segmented control functionality
+            const segmentedOptions = document.querySelectorAll('.vp-profile-two-col__segmented-option');
+            segmentedOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    segmentedOptions.forEach(opt => opt.classList.remove('vp-profile-two-col__segmented-option--active'));
+                    this.classList.add('vp-profile-two-col__segmented-option--active');
+                });
+            });
+
+            // Sidebar toggle functionality
+            const sidebarToggle = document.querySelector('.vp-sidebar__toggle');
+            const sidebar = document.querySelector('.vp-sidebar');
+            
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('vp-sidebar--collapsed');
+                const isCollapsed = sidebar.classList.contains('vp-sidebar--collapsed');
+                this.setAttribute('aria-label', isCollapsed ? 'باز کردن منو' : 'بستن منو');
+                this.textContent = isCollapsed ? '→' : '←';
+            });
+        });
+    </script>
+</body>
+</html>

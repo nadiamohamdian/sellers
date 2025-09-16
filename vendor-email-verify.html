@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل فروشنده - تأیید ایمیل</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Layout Shell -->
+    <div class="vp-layout-shell">
+        <!-- Header -->
+        <header class="vp-layout-header">
+            <div class="vp-layout-header__content">
+                <!-- Right side content -->
+                <div class="vp-layout-header__right">
+                    <div class="vp-layout-header__item">
+                        <span class="vp-layout-header__text">نام فروشنده</span>
+                    </div>
+                    <div class="vp-layout-header__item">
+                        <div class="vp-layout-header__avatar vp-layout-header__avatar--brand"></div>
+                    </div>
+                </div>
+
+                <!-- Left side content -->
+                <div class="vp-layout-header__left">
+                    <div class="vp-layout-header__item">
+                        <button class="vp-layout-header__icon-btn">
+                            <img src="/img/placeholder-upload.svg" alt="" class="vp-layout-header__icon">
+                        </button>
+                    </div>
+                    <div class="vp-layout-header__item">
+                        <button class="vp-layout-header__icon-btn">
+                            <img src="/img/placeholder-bell.svg" alt="" class="vp-layout-header__icon">
+                            <span class="vp-layout-header__badge vp-layout-header__badge--brand">24</span>
+                        </button>
+                    </div>
+                    <button class="vp-layout-header__mode-toggle" data-mode-toggle>
+                        🌙
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="vp-layout-body">
+            <!-- Sidebar -->
+            <aside class="vp-sidebar">
+                <div class="vp-sidebar__header">
+                    <div class="vp-sidebar__avatar"></div>
+                </div>
+                
+                <nav class="vp-sidebar__nav">
+                    <!-- پیشخوان Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">پیشخوان</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor" class="vp-nav-item">
+                                    <img src="/img/placeholder-dashboard.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">پیشخوان</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- کالا Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">کالا</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/search" class="vp-nav-item">
+                                    <img src="/img/placeholder-search.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">جستجو و ثبت کالا</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/manage" class="vp-nav-item">
+                                    <img src="/img/placeholder-variant.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت کالا و افزودن تنوع</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/pricing" class="vp-nav-item">
+                                    <img src="/img/placeholder-pricing.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت تنوع و قیمت گذاری</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/products/stock" class="vp-nav-item">
+                                    <img src="/img/placeholder-inventory.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">گزارش موجودی کالا</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- سفارش‌ها Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">سفارش‌ها</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/orders/open" class="vp-nav-item">
+                                    <img src="/img/placeholder-orders.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مدیریت سفارشات جاری</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/orders/history" class="vp-nav-item">
+                                    <img src="/img/placeholder-history.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">تاریخچه سفارشات</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- مالی Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">مالی</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/billing" class="vp-nav-item">
+                                    <img src="/img/placeholder-billing.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">صورتحساب ها</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- تحلیل عملکرد Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">تحلیل عملکرد</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/analytics" class="vp-nav-item">
+                                    <img src="/img/placeholder-analytics.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">فروش و درآمد</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/returns" class="vp-nav-item">
+                                    <img src="/img/placeholder-return.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مرجوعی</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- راهنما Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">راهنما</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/academy" class="vp-nav-item">
+                                    <img src="/img/placeholder-academy.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">مرکز آموزش فروشندگان</span>
+                                </a>
+                            </li>
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/restricted" class="vp-nav-item">
+                                    <img src="/img/placeholder-restricted.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">کالاهای غیرمجاز</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- پشتیبانی Section -->
+                    <div class="vp-sidebar__section">
+                        <h3 class="vp-sidebar__section-title">پشتیبانی</h3>
+                        <ul class="vp-sidebar__list">
+                            <li class="vp-sidebar__item">
+                                <a href="/vendor/support" class="vp-nav-item">
+                                    <img src="/img/placeholder-support.svg" alt="" class="vp-nav-item__icon">
+                                    <span class="vp-sidebar__label">درخواست پشتیبانی</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <button class="vp-sidebar__toggle" aria-label="بستن منو">
+                    ←
+                </button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="vp-layout-main">
+                <div class="vp-layout-content">
+                    <!-- Signup Stepper -->
+                    <div class="vp-signup-stepper">
+                        <div class="vp-signup-stepper__container">
+                            <div class="vp-signup-stepper__card">
+                                <div class="vp-signup-stepper__steps">
+                                    <!-- Step 1: پروفایل -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--next">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-user.svg" alt="پروفایل" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">پروفایل</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-signup-stepper__separator vp-signup-stepper__separator--line"></div>
+
+                                    <!-- Step 2: تایید ایمیل (Current) -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--current vp-signup-stepper__step--accent-brand">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-mail.svg" alt="تایید ایمیل" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">تایید ایمیل</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-signup-stepper__separator vp-signup-stepper__separator--line"></div>
+
+                                    <!-- Step 3: ارسال قرارداد -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--next">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-contract.svg" alt="ارسال قرارداد" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">ارسال قرارداد</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-signup-stepper__separator vp-signup-stepper__separator--line"></div>
+
+                                    <!-- Step 4: ثبت شماره حساب -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--next">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-bank.svg" alt="ثبت شماره حساب" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">ثبت شماره حساب</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-signup-stepper__separator vp-signup-stepper__separator--line"></div>
+
+                                    <!-- Step 5: ارسال مدارک -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--next">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-docs.svg" alt="ارسال مدارک" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">ارسال مدارک</span>
+                                        </div>
+                                    </div>
+                                    <div class="vp-signup-stepper__separator vp-signup-stepper__separator--line"></div>
+
+                                    <!-- Step 6: آموزش -->
+                                    <div class="vp-signup-stepper__step vp-signup-stepper__step--next">
+                                        <div class="vp-signup-stepper__icon">
+                                            <img src="/img/placeholder-play.svg" alt="آموزش" class="vp-signup-stepper__icon-img">
+                                        </div>
+                                        <div class="vp-signup-stepper__content">
+                                            <span class="vp-signup-stepper__label">آموزش</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Verify Two Column Layout -->
+                    <div class="vp-email-verify-two-col">
+                        <div class="vp-email-verify-two-col__container">
+                            <div class="vp-email-verify-two-col__grid">
+                                <!-- Left Column - Notice Card -->
+                                <div class="vp-email-verify-two-col__column">
+                                    <div class="vp-email-verify-two-col__card">
+                                        <h3 class="vp-email-verify-two-col__heading vp-email-verify-two-col__heading--level-3">دقت کنید</h3>
+                                        
+                                        <ul class="vp-email-verify-two-col__list vp-email-verify-two-col__list--dot">
+                                            <li class="vp-email-verify-two-col__list-item">لطفاً آدرس ایمیل خود را بدون فاصله و خط تیره وارد نمایید</li>
+                                            <li class="vp-email-verify-two-col__list-item">بعد از تأیید ایمیل، امکان تغییر آن وجود ندارد</li>
+                                        </ul>
+
+                                        <div class="vp-email-verify-two-col__alert vp-email-verify-two-col__alert--soft">
+                                            <p class="vp-email-verify-two-col__alert-text vp-email-verify-two-col__alert-text--danger">مسئولیت اشتباه بودن اطلاعات بر عهده خود کاربر می‌باشد</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column - Main Form Card -->
+                                <div class="vp-email-verify-two-col__column">
+                                    <div class="vp-email-verify-two-col__card">
+                                        <form class="vp-email-verify-two-col__form">
+                                            <h3 class="vp-email-verify-two-col__heading vp-email-verify-two-col__heading--level-3 vp-email-verify-two-col__heading--center">ایمیل</h3>
+                                            <p class="vp-email-verify-two-col__text vp-email-verify-two-col__text--muted vp-email-verify-two-col__text--center">
+                                                برای استفاده از پنل فروشندگان استاویتا لطفاً ایمیل خود را وارد و سپس تأیید کنید
+                                            </p>
+
+                                            <div class="vp-email-verify-two-col__form-field">
+                                                <label class="vp-email-verify-two-col__form-label">ایمیل</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder="example@mail.com"
+                                                    class="vp-email-verify-two-col__form-input"
+                                                />
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__divider"></div>
+
+                                            <h4 class="vp-email-verify-two-col__heading vp-email-verify-two-col__heading--level-4 vp-email-verify-two-col__heading--center">تاییدیه ایمیل</h4>
+                                            
+                                            <div class="vp-email-verify-two-col__inline vp-email-verify-two-col__inline--center">
+                                                <span class="vp-email-verify-two-col__keytext">
+                                                    <span class="vp-email-verify-two-col__keytext-key">کد تایید به</span>
+                                                    <span class="vp-email-verify-two-col__keytext-value">testtesttest@gmail.com</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__checkbox-field">
+                                                <input
+                                                    type="checkbox"
+                                                    id="accept_rules"
+                                                    name="accept_rules"
+                                                    class="vp-email-verify-two-col__checkbox"
+                                                />
+                                                <label for="accept_rules" class="vp-email-verify-two-col__checkbox-label">
+                                                    قوانین استاویتا را قبول دارم
+                                                </label>
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__actions vp-email-verify-two-col__actions--center">
+                                                <button
+                                                    type="button"
+                                                    class="vp-email-verify-two-col__btn vp-email-verify-two-col__btn--brand"
+                                                    style="width: 165px; height: 40px; font-size: 14px;"
+                                                >
+                                                    ارسال کد تایید
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="vp-email-verify-two-col__btn vp-email-verify-two-col__btn--outline"
+                                                    style="width: 149px; height: 40px; font-size: 14px;"
+                                                >
+                                                    خواندن قوانین
+                                                </button>
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__divider"></div>
+
+                                            <div class="vp-email-verify-two-col__otp">
+                                                <div class="vp-email-verify-two-col__otp-inputs">
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                    <input type="text" maxlength="1" class="vp-email-verify-two-col__otp-input" />
+                                                </div>
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__inline vp-email-verify-two-col__inline--center">
+                                                <span class="vp-email-verify-two-col__text vp-email-verify-two-col__text--muted">مانده تا دریافت مجدد</span>
+                                                <span class="vp-email-verify-two-col__countdown">01:41</span>
+                                            </div>
+
+                                            <div class="vp-email-verify-two-col__actions vp-email-verify-two-col__actions--center">
+                                                <button
+                                                    type="submit"
+                                                    class="vp-email-verify-two-col__btn vp-email-verify-two-col__btn--brand"
+                                                    style="width: 165px; height: 40px; font-size: 14px;"
+                                                >
+                                                    ثبت و بررسی کد
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modeToggle = document.querySelector('[data-mode-toggle]');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                modeToggle.textContent = '☀️';
+            }
+            
+            modeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    html.removeAttribute('data-theme');
+                    modeToggle.textContent = '🌙';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    modeToggle.textContent = '☀️';
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // Sidebar toggle functionality
+            const sidebarToggle = document.querySelector('.vp-sidebar__toggle');
+            const sidebar = document.querySelector('.vp-sidebar');
+            
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('vp-sidebar--collapsed');
+                const isCollapsed = sidebar.classList.contains('vp-sidebar--collapsed');
+                this.setAttribute('aria-label', isCollapsed ? 'باز کردن منو' : 'بستن منو');
+                this.textContent = isCollapsed ? '→' : '←';
+            });
+
+            // OTP input functionality
+            const otpInputs = document.querySelectorAll('.vp-email-verify-two-col__otp-input');
+            
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', function(e) {
+                    const value = e.target.value.replace(/\D/g, '');
+                    if (value) {
+                        e.target.value = value;
+                        // Focus next input
+                        const nextInput = otpInputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus();
+                        }
+                    }
+                });
+
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Backspace' && e.target.value === '') {
+                        const prevInput = otpInputs[index - 1];
+                        if (prevInput) {
+                            prevInput.focus();
+                        }
+                    }
+                });
+
+                input.addEventListener('paste', function(e) {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+                    pastedData.split('').forEach((char, i) => {
+                        if (otpInputs[i]) {
+                            otpInputs[i].value = char;
+                        }
+                    });
+                    // Focus the last filled input
+                    const lastInput = otpInputs[Math.min(pastedData.length - 1, 5)];
+                    if (lastInput) {
+                        lastInput.focus();
+                    }
+                });
+            });
+
+            // Countdown timer
+            let countdown = 101; // 1:41 in seconds
+            const countdownElement = document.querySelector('.vp-email-verify-two-col__countdown');
+            
+            function updateCountdown() {
+                const minutes = Math.floor(countdown / 60);
+                const seconds = countdown % 60;
+                countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (countdown > 0) {
+                    countdown--;
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+
+            // Start countdown when send code button is clicked
+            const sendCodeBtn = document.querySelector('.vp-email-verify-two-col__btn--brand');
+            sendCodeBtn.addEventListener('click', function() {
+                const emailInput = document.querySelector('.vp-email-verify-two-col__form-input');
+                const checkbox = document.querySelector('.vp-email-verify-two-col__checkbox');
+                
+                if (emailInput.value && checkbox.checked) {
+                    countdown = 101;
+                    updateCountdown();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

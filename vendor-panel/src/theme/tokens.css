@@ -1,0 +1,122 @@
+/* Vendor Panel Theme Tokens */
+:root {
+  /* Brand Colors */
+  --brand: #0560FD;
+  --brandGlow: #0091D0;
+  
+  /* Text Colors */
+  --text-base: #0F1723;
+  --text-muted: #606060;
+  --text-inverse: #FFFFFF;
+  
+  /* Background Colors */
+  --bg-base: #FFFFFF;
+  --bg-elev: #F6F7FB;
+  --bg-soft: #ECF0FF;
+  
+  /* Border & Accent */
+  --border: #E5E7EB;
+  --danger: #ED1C24;
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.12);
+  --shadow-glow-brand: 0 0 10px var(--brandGlow);
+  
+  /* Typography */
+  --font-family: IRANYekan, Vazirmatn, system-ui, sans-serif;
+  --font-size-base: 14px;
+  --font-scale: 1.125;
+  
+  /* Font Sizes (based on scale) */
+  --font-size-xs: calc(var(--font-size-base) / var(--font-scale));
+  --font-size-sm: var(--font-size-base);
+  --font-size-md: calc(var(--font-size-base) * var(--font-scale));
+  --font-size-lg: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale));
+  --font-size-xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+  --font-size-2xl: calc(var(--font-size-base) * var(--font-scale) * var(--font-scale) * var(--font-scale) * var(--font-scale));
+  
+  /* RTL Support */
+  direction: rtl;
+  text-align: right;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  /* Brand Colors (adjusted for dark) */
+  --brand: #3B82F6;
+  --brandGlow: #0EA5E9;
+  
+  /* Text Colors */
+  --text-base: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --text-inverse: #0B0F14;
+  
+  /* Background Colors */
+  --bg-base: #0B0F14;
+  --bg-elev: #111827;
+  --bg-soft: #0F1620;
+  
+  /* Border */
+  --border: #1F2937;
+}
+
+/* Global RTL Styles */
+html {
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-base);
+  background-color: var(--bg-base);
+  direction: rtl;
+  text-align: right;
+}
+
+/* Utility Classes */
+.text-brand { color: var(--brand); }
+.text-muted { color: var(--text-muted); }
+.text-inverse { color: var(--text-inverse); }
+
+.bg-base { background-color: var(--bg-base); }
+.bg-elev { background-color: var(--bg-elev); }
+.bg-soft { background-color: var(--bg-soft); }
+
+.border-brand { border-color: var(--brand); }
+.border-muted { border-color: var(--border); }
+
+.radius-sm { border-radius: var(--radius-sm); }
+.radius-md { border-radius: var(--radius-md); }
+.radius-lg { border-radius: var(--radius-lg); }
+.radius-pill { border-radius: var(--radius-pill); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-glow-brand { box-shadow: var(--shadow-glow-brand); }
+
+/* Focus States */
+.focus-brand:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* RTL Input Styles */
+input, textarea, select {
+  direction: rtl;
+  text-align: right;
+}
+
+/* RTL Button Styles */
+button {
+  direction: rtl;
+  font-family: var(--font-family);
+}

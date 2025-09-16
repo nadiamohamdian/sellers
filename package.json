@@ -1,0 +1,16 @@
+{
+  "name": "seller",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd vendor-panel && npm run dev",
+    "build": "cd vendor-panel && npm run build",
+    "lint": "cd vendor-panel && npm run lint",
+    "preview": "cd vendor-panel && npm run preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.544.0",
+    "recharts": "^3.2.0",
+    "tailwind-merge": "^3.3.1"
+  }
+}

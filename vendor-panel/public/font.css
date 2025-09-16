@@ -1,0 +1,8 @@
+@font-face{
+    font-family: "Yekan_Bakh";
+    src: url("/fonts/YekanBakh.woff2") format("woff2");
+    font-weight: 400 800;
+    font-style: normal;
+    font-display: swap;
+}
+body{ font-family: "Yekan_Bakh", system-ui, sans-serif; }
