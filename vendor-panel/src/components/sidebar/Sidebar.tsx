@@ -1,4 +1,5 @@
 import React from "react";
+import "./Sidebar.css";
 
 interface SidebarProps {
   activePage?: string;
@@ -24,132 +25,123 @@ export default function Sidebar({ activePage = "dashboard", onPageChange }: Side
     <div className="sidebar">
       {/* Header */}
       <div className="sidebar-header">
-        <div className="seller-name clickable">
-          <span className="seller-text">نام فروشنده</span>
-          <div className="header-icons">
-            <div className="small-icon collapse-icon" onClick={toggleSidebar}>
-              <img src="/icons/Vector (1).svg" alt="بستن" />
-            </div>
-            <div className="small-icon message-icon" onClick={showMessages}>
-              <img src="/icons/Group 45699.svg" alt="پیام‌ها" />
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                <span className="text-xs text-white font-bold">23</span>
-                        </div>
-                        </div>
-                    </div>
-          <div className="profile-icon">
-            <img src="/icons/Vector.svg" alt="پروفایل" />
-                    </div>
-                </div>
-                </div>
+        <div className="seller-info">
+          <span className="seller-name">نام فروشنده</span>
+          <div className="profile-avatar">
+            <img src="/icons/Group 45650.svg" alt="Profile" />
+            <div className="notification-badge">24</div>
+          </div>
+        </div>
+      </div>
 
       {/* Navigation Menu */}
       <nav className="nav-menu">
-        <div className={`nav-item ${activePage === "dashboard" ? "active" : ""}`} onClick={() => handleItemClick("dashboard")}>
-          <span className="nav-icon">
-            <img src="/icons/Group 45701.svg" alt="پیشخوان" />
-          </span>
-          <span className="nav-text">پیشخوان</span>
-                    </div>
-
+        {/* کالا Category */}
         <div className="nav-category">
-          <div className="category-header">کالا</div>
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">کالا</span>
+          </div>
+          
+          <div className={`nav-item ${activePage === "dashboard" ? "active" : ""}`} onClick={() => handleItemClick("dashboard")}>
+            <img src="/icons/Group 45698.svg" alt="پیشخوان" className="nav-icon" />
+            <span className="nav-text">پیشخوان</span>
+          </div>
+          
           <div className={`nav-item ${activePage === "search-product" ? "active" : ""}`} onClick={() => handleItemClick("search-product")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45702.svg" alt="جستجو و ثبت کالا" />
-            </span>
+            <img src="/icons/Group 45699.svg" alt="جستجو و ثبت کالا" className="nav-icon" />
             <span className="nav-text">جستجو و ثبت کالا</span>
           </div>
+          
           <div className={`nav-item ${activePage === "manage-product" ? "active" : ""}`} onClick={() => handleItemClick("manage-product")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45703.svg" alt="مدیریت کالا" />
-            </span>
+            <img src="/icons/Group 45700.svg" alt="مدیریت کالا" className="nav-icon" />
             <span className="nav-text">مدیریت کالا و افزودن تنوع</span>
           </div>
+          
           <div className={`nav-item ${activePage === "manage-variety" ? "active" : ""}`} onClick={() => handleItemClick("manage-variety")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45704.svg" alt="مدیریت تنوع" />
-            </span>
+            <img src="/icons/Group 45701.svg" alt="مدیریت تنوع" className="nav-icon" />
             <span className="nav-text">مدیریت تنوع و قیمت گذاری</span>
           </div>
+          
           <div className={`nav-item ${activePage === "inventory-report" ? "active" : ""}`} onClick={() => handleItemClick("inventory-report")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45705.svg" alt="گزارش موجودی" />
-            </span>
+            <img src="/icons/Group 45702.svg" alt="گزارش موجودی" className="nav-icon" />
             <span className="nav-text">گزارش موجودی کالا</span>
-                        </div>
-                    </div>
+          </div>
+        </div>
 
+        {/* سفارش ها Category */}
         <div className="nav-category">
-          <div className="category-header">سفارش ها</div>
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">سفارش ها</span>
+          </div>
+          
           <div className={`nav-item ${activePage === "current-orders" ? "active" : ""}`} onClick={() => handleItemClick("current-orders")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45707.svg" alt="سفارشات جاری" />
-            </span>
+            <img src="/icons/Group 45703.svg" alt="سفارشات جاری" className="nav-icon" />
             <span className="nav-text">مدیریت سفارشات جاری</span>
           </div>
+          
           <div className={`nav-item ${activePage === "order-history" ? "active" : ""}`} onClick={() => handleItemClick("order-history")}>
-            <span className="nav-icon">
-              <img src="/icons/Group 45708.svg" alt="تاریخچه سفارشات" />
-            </span>
+            <img src="/icons/Group 45704.svg" alt="تاریخچه سفارشات" className="nav-icon" />
             <span className="nav-text">تاریخچه سفارشات</span>
-                        </div>
-                    </div>
+          </div>
+        </div>
 
+        {/* مالی Category */}
         <div className="nav-category">
-          <div className="category-header">مالی</div>
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">مالی</span>
+          </div>
+          
           <div className={`nav-item ${activePage === "invoices" ? "active" : ""}`} onClick={() => handleItemClick("invoices")}>
-            <span className="nav-icon">
-              <img src="/icons/Vector (1).svg" alt="صورتحساب ها" />
-            </span>
+            <img src="/icons/Group 45705.svg" alt="صورتحساب ها" className="nav-icon" />
             <span className="nav-text">صورتحساب ها</span>
           </div>
-          <div className={`nav-item ${activePage === "performance-analysis" ? "active" : ""}`} onClick={() => handleItemClick("performance-analysis")}>
-            <span className="nav-icon">
-              <img src="/icons/Vector (2).svg" alt="تحلیل عملکرد" />
-            </span>
-            <span className="nav-text">تحلیل عملکرد</span>
+        </div>
+
+        {/* تحلیل عملکرد Category */}
+        <div className="nav-category">
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">تحلیل عملکرد</span>
           </div>
+          
           <div className={`nav-item ${activePage === "sales-revenue" ? "active" : ""}`} onClick={() => handleItemClick("sales-revenue")}>
-            <span className="nav-icon">
-              <img src="/icons/Vector (3).svg" alt="فروش و درآمد" />
-            </span>
+            <img src="/icons/Group 45707.svg" alt="فروش و درآمد" className="nav-icon" />
             <span className="nav-text">فروش و درآمد</span>
           </div>
+          
           <div className={`nav-item ${activePage === "returns" ? "active" : ""}`} onClick={() => handleItemClick("returns")}>
-            <span className="nav-icon">
-              <img src="/icons/Vector (4).svg" alt="مرجوعی" />
-            </span>
+            <img src="/icons/Group 45708.svg" alt="مرجوعی" className="nav-icon" />
             <span className="nav-text">مرجوعی</span>
-                        </div>
-                    </div>
-
-        <div className="nav-category">
-          <div className="category-header">راهنما</div>
-          <div className={`nav-item ${activePage === "training-center" ? "active" : ""}`} onClick={() => handleItemClick("training-center")}>
-            <span className="nav-icon">
-              <img src="/icons/Layer_1.svg" alt="مرکز آموزش" />
-            </span>
-            <span className="nav-text">مرکز آموزش فروشندگان</span>
           </div>
-          <div className={`nav-item ${activePage === "prohibited-products" ? "active" : ""}`} onClick={() => handleItemClick("prohibited-products")}>
-            <span className="nav-icon">
-              <img src="/icons/Layer_1 (1).svg" alt="کالاهای غیر مجاز" />
-            </span>
-            <span className="nav-text">کالاهای غیر مجاز</span>
-                        </div>
-                    </div>
+        </div>
 
+        {/* راهنما Category */}
         <div className="nav-category">
-          <div className="category-header">پشتیبانی</div>
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">راهنما</span>
+          </div>
+          
+          <div className={`nav-item ${activePage === "prohibited-products" ? "active" : ""}`} onClick={() => handleItemClick("prohibited-products")}>
+            <span className="nav-text">کالاهای غیر مجاز</span>
+          </div>
+        </div>
+
+        {/* پشتیبانی Category */}
+        <div className="nav-category">
+          <div className="category-header">
+            <span className="category-dot">•</span>
+            <span className="category-title">پشتیبانی</span>
+          </div>
+          
           <div className={`nav-item ${activePage === "support-request" ? "active" : ""}`} onClick={() => handleItemClick("support-request")}>
-            <span className="nav-icon">
-              <img src="/icons/Layer_1 (2).svg" alt="پشتیبانی" />
-            </span>
             <span className="nav-text">درخواست پشتیبانی</span>
-                        </div>
-                    </div>
+          </div>
+        </div>
       </nav>
-            </div>
+    </div>
     );
 }

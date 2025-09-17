@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // اگر این کامپوننت را داری استفاده کن؛ اگر نداری می‌تونی موقتاً از یک <input> ساده استفاده کنی
 import OTPInput from "@/components/OTPInput";
@@ -10,6 +10,7 @@ export default function LoginPage() {
     const [step, setStep] = useState<"phone" | "otp">("phone");
     const [phone, setPhone] = useState("");
     const [otp, setOtp] = useState("");
+    const [timer, setTimer] = useState(0);
 
     // فقط رقم، حداکثر 11، شروع با 09
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +21,26 @@ export default function LoginPage() {
     const phoneValid = /^09\d{9}$/.test(phone);
     const otpValid = /^\d{6}$/.test(otp);
 
+    // Timer functionality
+    useEffect(() => {
+        if (step === "otp" && timer > 0) {
+            const interval = setInterval(() => {
+                setTimer((prev) => prev - 1);
+            }, 1000);
+            return () => clearInterval(interval);
+        }
+    }, [step, timer]);
+
+    const startTimer = () => {
+        setTimer(120); // 2 minutes
+    };
+
+    const handleEditPhone = () => {
+        setStep("phone");
+        setOtp("");
+        setTimer(0);
+    };
+
     const handlePrimaryClick = (e: React.MouseEvent) => {
         e.preventDefault();
 
@@ -27,6 +48,7 @@ export default function LoginPage() {
             if (!phoneValid) return; // نامعتبر → کاری نکن
             // اینجا معمولاً API ارسال کد را می‌زنی
             setStep("otp");
+            startTimer();
             return;
         }
 
@@ -60,11 +82,11 @@ export default function LoginPage() {
             <div
                 style={{
                     width: "100%",
-                    maxWidth: "900px",
-                    height: "500px",
+                    maxWidth: "1000px",
+                    height: "600px",
                     background: "white",
-                    borderRadius: "20px",
-                    boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+                    borderRadius: "24px",
+                    boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
                     display: "flex",
                     overflow: "hidden",
                 }}
@@ -72,35 +94,36 @@ export default function LoginPage() {
                 {/* بخش فرم سمت راست */}
                 <div
                     style={{
-                        width: "55%",
+                        width: "50%",
                         padding: "60px 50px",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
+                        background: "#FAFAFA",
                     }}
                 >
                     {/* تیتر */}
                     <div
                         style={{
-                            color: "#606060",
-                            fontSize: "28px",
-                            fontWeight: 700,
-                            marginBottom: "20px",
-                            textAlign: "right",
+                            color: "#2D2D2D",
+                            fontSize: "24px",
+                            fontWeight: "700",
+                            marginBottom: "16px",
+                            textAlign: "center",
                         }}
                     >
-                        ورود یا ثبت نام
+                        {step === "phone" ? "ورود یا ثبت نام" : "رمز یک بار مصرف"}
                     </div>
 
                     {/* متن توضیح */}
                     <div
                         style={{
-                            color: "#606060",
+                            color: "#6B6B6B",
                             fontSize: "16px",
-                            fontWeight: 400,
+                            fontWeight: "400",
                             lineHeight: "1.6",
-                            marginBottom: "40px",
-                            textAlign: "right",
+                            marginBottom: "32px",
+                            textAlign: "center",
                         }}
                     >
                         {step === "phone" ? (
@@ -111,20 +134,64 @@ export default function LoginPage() {
                             </>
                         ) : (
                             <>
-                                کد ۶ رقمی به شماره {phone} ارسال شد.<br />
-                                لطفاً کد را وارد کنید.
+                                رمز را به شماره زیر پیامک کردیم. آن را وارد کنید:
                             </>
                         )}
                     </div>
 
+                    {step === "otp" && (
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                marginBottom: "24px",
+                                gap: "12px",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    flex: 1,
+                                    height: "48px",
+                                    background: "#E8E8E8",
+                                    borderRadius: "12px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    color: "#2D2D2D",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                }}
+                            >
+                                {phone}
+                            </div>
+                            <div
+                                style={{
+                                    width: "48px",
+                                    height: "48px",
+                                    background: "#E3F2FD",
+                                    borderRadius: "12px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    cursor: "pointer",
+                                }}
+                                onClick={handleEditPhone}
+                            >
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="#2196F3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    )}
+
                     {/* لیبل فیلد */}
                     <div
                         style={{
-                            color: "#606060",
+                            color: "#6B6B6B",
                             fontSize: "16px",
-                            fontWeight: 400,
-                            marginBottom: "10px",
-                            textAlign: "right",
+                            fontWeight: "500",
+                            marginBottom: "12px",
+                            textAlign: "center",
                         }}
                     >
                         {step === "phone" ? "شماره موبایل با ایمیل" : "کد تأیید ۶ رقمی"}
@@ -134,38 +201,41 @@ export default function LoginPage() {
                     <div
                         style={{
                             width: "100%",
-                            height: "55px",
-                            boxShadow: "0px 2px 3px rgba(0, 0, 0, 0.10)",
-                            borderRadius: "10px",
-                            border: "1px solid #707175",
-                            background: "#fff",
-                            overflow: "hidden",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            paddingInline: "15px",
-                            marginBottom: "20px",
+                            marginBottom: "24px",
                         }}
                     >
                         {step === "phone" ? (
-                            <input
-                                inputMode="numeric"
-                                pattern="[0-9]*"
-                                value={phone}
-                                onChange={handlePhoneChange}
-                                placeholder="09123456789"
+                            <div
                                 style={{
                                     width: "100%",
-                                    height: "100%",
-                                    outline: "none",
-                                    border: "none",
-                                    background: "transparent",
-                                    textAlign: "right",
-                                    color: "#707175",
-                                    fontSize: "18px",
-                                    direction: "rtl",
+                                    height: "56px",
+                                    background: "white",
+                                    borderRadius: "12px",
+                                    border: "1px solid #E0E0E0",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    paddingInline: "16px",
                                 }}
-                            />
+                            >
+                                <input
+                                    inputMode="numeric"
+                                    pattern="[0-9]*"
+                                    value={phone}
+                                    onChange={handlePhoneChange}
+                                    placeholder="09123456789"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        outline: "none",
+                                        border: "none",
+                                        background: "transparent",
+                                        textAlign: "right",
+                                        color: "#2D2D2D",
+                                        fontSize: "16px",
+                                        direction: "rtl",
+                                    }}
+                                />
+                            </div>
                         ) : (
                             <OTPInput
                                 length={6}
@@ -175,26 +245,39 @@ export default function LoginPage() {
                         )}
                     </div>
 
+                    {step === "otp" && timer > 0 && (
+                        <div
+                            style={{
+                                color: "#8B8B8B",
+                                fontSize: "14px",
+                                textAlign: "right",
+                                marginBottom: "24px",
+                            }}
+                        >
+                            {Math.floor(timer / 60)}:{(timer % 60).toString().padStart(2, '0')} مانده تا دریافت مجدد
+                        </div>
+                    )}
+
                     {/* دکمه اصلی */}
                     <button
                         style={{
                             width: "100%",
-                            height: "55px",
-                            background: "#0560FD",
-                            boxShadow: "0px 2px 3px rgba(0, 0, 0, 0.10)",
-                            borderRadius: "10px",
+                            height: "56px",
+                            background: "#0560fd",
+                            borderRadius: "12px",
                             border: "none",
                             cursor: "pointer",
                             opacity: step === "phone" ? (phoneValid ? 1 : 0.5) : otpValid ? 1 : 0.5,
                             color: "white",
-                            fontSize: "18px",
-                            fontWeight: 700,
-                            marginBottom: "30px",
+                            fontSize: "16px",
+                            fontWeight: "700",
+                            marginBottom: "32px",
+                            transition: "all 0.2s ease",
                         }}
                         onClick={handlePrimaryClick}
                         disabled={step === "phone" ? !phoneValid : !otpValid}
                     >
-                        {step === "phone" ? "تایید" : "تأیید"}
+                        {step === "phone" ? "تایید" : "ورود به پنل"}
                     </button>
 
                     {/* لینک‌های پایین */}
@@ -203,14 +286,14 @@ export default function LoginPage() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            gap: "15px",
+                            gap: "16px",
                         }}
                     >
                         <div
                             style={{
-                                color: "#0560FD",
+                                color: "#2196F3",
                                 fontSize: "14px",
-                                fontWeight: 700,
+                                fontWeight: "500",
                                 cursor: "pointer",
                             }}
                             onClick={() => alert("راهنمای ثبت‌نام")}
@@ -220,15 +303,15 @@ export default function LoginPage() {
                         <div
                             style={{
                                 width: "1px",
-                                height: "20px",
-                                background: "#ED1C24",
+                                height: "16px",
+                                background: "#FF4444",
                             }}
                         />
                         <div
                             style={{
-                                color: "#0560FD",
+                                color: "#2196F3",
                                 fontSize: "14px",
-                                fontWeight: 700,
+                                fontWeight: "500",
                                 cursor: "pointer",
                             }}
                             onClick={() => alert("تماس با پشتیبانی")}
@@ -241,45 +324,42 @@ export default function LoginPage() {
                 {/* پنل گرادیانی سمت چپ */}
                 <div
                     style={{
-                        width: "45%",
-                        background: "linear-gradient(180deg, rgba(0, 145, 208, 0.20) 0%, rgba(0, 145, 208, 0.80) 100%)",
+                        width: "50%",
+                        background: "linear-gradient(180deg, rgba(0, 145, 208, 0.2), rgba(0, 145, 208, 0.8))",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
                         position: "relative",
-                        padding: "40px 20px",
+                        padding: "60px 40px",
                     }}
                 >
-                    {/* لوگوی نواری */}
-                    <img
-                        src="/icons/Group 45650.svg"
-                        alt="brand stripe"
-                        style={{
-                            width: "180px",
-                            height: "40px",
-                            objectFit: "contain",
-                            marginBottom: "20px",
-                        }}
-                    />
-
-                    {/* متن SELLER CENTER */}
+                    {/* لوگو */}
                     <div
                         style={{
-                            color: "white",
-                            fontSize: "20px",
-                            fontWeight: 700,
-                            marginBottom: "30px",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            marginBottom: "40px",
                         }}
                     >
-                        SELLER CENTER
+                        <img
+                            src="/icons/Group 45650.svg"
+                            alt="stavita logo"
+                            style={{
+                                width: "200px",
+                                height: "auto",
+                                objectFit: "contain",
+                                marginBottom: "8px",
+                            }}
+                        />
                     </div>
 
                     {/* تصویر 3D */}
                     <img
                         style={{
-                            width: "280px",
-                            height: "280px",
+                            width: "320px",
+                            height: "320px",
                             objectFit: "contain",
                         }}
                         src="/imgs/3d-render-secure-login-password-illustration---Copy 1.png"

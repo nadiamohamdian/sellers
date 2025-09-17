@@ -1,5 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { 
+  User, 
+  Home, 
+  Search, 
+  Package, 
+  Tag, 
+  BarChart3, 
+  ClipboardList, 
+  Clock, 
+  Receipt, 
+  TrendingUp, 
+  RotateCcw, 
+  BookOpen, 
+  AlertTriangle, 
+  Headphones, 
+  Mail, 
+  FileText, 
+  CreditCard, 
+  Upload
+} from "lucide-react";
 import "./EmailVerificationPage.css";
 
 const EmailVerificationPage: React.FC = () => {
@@ -42,8 +62,8 @@ const EmailVerificationPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Navigate to bank account page
-    navigate('/bank-account');
+    // Navigate to contract submission page
+    navigate('/contract');
   };
 
   const formatTime = (seconds: number) => {
@@ -58,7 +78,7 @@ const EmailVerificationPage: React.FC = () => {
       <aside className="ev-sidebar ev-sidebar--blurred">
         <div className="ev-sidebar__header">
           <div className="ev-sidebar__avatar">
-            <img src="/icons/Group 45650.svg" alt="User" className="ev-sidebar__avatar-icon" />
+            <span className="icon"><User size={18} /></span>
             <div className="ev-sidebar__badge">24</div>
           </div>
           <span className="ev-sidebar__name">نام فروشنده</span>
@@ -69,23 +89,23 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">کالا</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item ev-sidebar__item--active">
-                <img src="/icons/Group 45698.svg" alt="Dashboard" className="ev-sidebar__icon" />
+                <span className="icon"><Home size={18} /></span>
                 <span className="ev-sidebar__text">پیشخوان</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45699.svg" alt="Search" className="ev-sidebar__icon" />
+                <span className="icon"><Search size={18} /></span>
                 <span className="ev-sidebar__text">جستجو و ثبت کالا</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45700.svg" alt="Manage" className="ev-sidebar__icon" />
+                <span className="icon"><Package size={18} /></span>
                 <span className="ev-sidebar__text">مدیریت کالا و افزودن تنوع</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45701.svg" alt="Pricing" className="ev-sidebar__icon" />
+                <span className="icon"><Tag size={18} /></span>
                 <span className="ev-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45702.svg" alt="Inventory" className="ev-sidebar__icon" />
+                <span className="icon"><BarChart3 size={18} /></span>
                 <span className="ev-sidebar__text">گزارش موجودی کالا</span>
               </li>
             </ul>
@@ -95,11 +115,11 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">سفارش‌ها</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45703.svg" alt="Orders" className="ev-sidebar__icon" />
+                <span className="icon"><ClipboardList size={18} /></span>
                 <span className="ev-sidebar__text">مدیریت سفارشات جاری</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45704.svg" alt="History" className="ev-sidebar__icon" />
+                <span className="icon"><Clock size={18} /></span>
                 <span className="ev-sidebar__text">تاریخچه سفارشات</span>
               </li>
             </ul>
@@ -109,7 +129,7 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">مالی</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45705.svg" alt="Invoices" className="ev-sidebar__icon" />
+                <span className="icon"><Receipt size={18} /></span>
                 <span className="ev-sidebar__text">صورتحساب ها</span>
               </li>
             </ul>
@@ -119,11 +139,11 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">تحلیل عملکرد</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45707.svg" alt="Sales" className="ev-sidebar__icon" />
+                <span className="icon"><TrendingUp size={18} /></span>
                 <span className="ev-sidebar__text">فروش و درآمد</span>
               </li>
               <li className="ev-sidebar__item">
-                <img src="/icons/Group 45708.svg" alt="Returns" className="ev-sidebar__icon" />
+                <span className="icon"><RotateCcw size={18} /></span>
                 <span className="ev-sidebar__text">مرجوعی</span>
               </li>
             </ul>
@@ -133,7 +153,7 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">راهنما</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item">
-                <img src="/icons/Vector.svg" alt="Warning" className="ev-sidebar__icon" />
+                <span className="icon"><AlertTriangle size={18} /></span>
                 <span className="ev-sidebar__text">کالاهای غیر مجاز</span>
               </li>
             </ul>
@@ -143,7 +163,7 @@ const EmailVerificationPage: React.FC = () => {
             <h3 className="ev-sidebar__section-title">پشتیبانی</h3>
             <ul className="ev-sidebar__list">
               <li className="ev-sidebar__item">
-                <img src="/icons/Layer_1.svg" alt="Support" className="ev-sidebar__icon" />
+                <span className="icon"><Headphones size={18} /></span>
                 <span className="ev-sidebar__text">درخواست پشتیبانی</span>
               </li>
             </ul>
@@ -160,15 +180,7 @@ const EmailVerificationPage: React.FC = () => {
           <section className="ev-stepper">
             <div className="ev-stepper__item">
               <div className="ev-stepper__icon">
-                <img src="/icons/Group 45698.svg" alt="Learn" />
-              </div>
-              <div className="ev-stepper__dot"></div>
-              <span className="ev-stepper__label">آموزش</span>
-            </div>
-            <div className="ev-stepper__line"></div>
-            <div className="ev-stepper__item">
-              <div className="ev-stepper__icon">
-                <img src="/icons/Group 45699.svg" alt="Docs" />
+                <span className="icon"><Upload size={18} /></span>
               </div>
               <div className="ev-stepper__dot"></div>
               <span className="ev-stepper__label">ارسال مدارک</span>
@@ -176,7 +188,7 @@ const EmailVerificationPage: React.FC = () => {
             <div className="ev-stepper__line"></div>
             <div className="ev-stepper__item">
               <div className="ev-stepper__icon">
-                <img src="/icons/Group 45700.svg" alt="Bank" />
+                <span className="icon"><CreditCard size={18} /></span>
               </div>
               <div className="ev-stepper__dot"></div>
               <span className="ev-stepper__label">ثبت شماره حساب</span>
@@ -184,7 +196,7 @@ const EmailVerificationPage: React.FC = () => {
             <div className="ev-stepper__line"></div>
             <div className="ev-stepper__item">
               <div className="ev-stepper__icon">
-                <img src="/icons/Group 45701.svg" alt="Contract" />
+                <span className="icon"><FileText size={18} /></span>
               </div>
               <div className="ev-stepper__dot"></div>
               <span className="ev-stepper__label">ارسال قرارداد</span>
@@ -192,14 +204,15 @@ const EmailVerificationPage: React.FC = () => {
             <div className="ev-stepper__line"></div>
             <div className="ev-stepper__item ev-stepper__item--active">
               <div className="ev-stepper__icon">
-                <img src="/icons/Group 45702.svg" alt="Email" />
+                <span className="icon"><Mail size={18} /></span>
               </div>
               <div className="ev-stepper__dot"></div>
               <span className="ev-stepper__label">تایید ایمیل</span>
             </div>
+            <div className="ev-stepper__line ev-stepper__line--green"></div>
             <div className="ev-stepper__item ev-stepper__item--done">
               <div className="ev-stepper__icon">
-                <img src="/icons/Group 45650.svg" alt="Profile" />
+                <span className="icon"><User size={18} /></span>
               </div>
               <div className="ev-stepper__dot"></div>
               <span className="ev-stepper__label">پروفایل</span>

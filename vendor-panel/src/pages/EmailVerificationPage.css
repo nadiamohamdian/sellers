@@ -25,9 +25,10 @@
 }
 
 .ev-sidebar--blurred {
-  filter: blur(1px);
-  opacity: 0.4;
+  filter: blur(2px);
+  opacity: 0.3;
   pointer-events: none;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .ev-sidebar__header {
@@ -242,15 +243,16 @@
 
 /* Stepper */
 .ev-stepper {
-  background: #F6F7FB;
+  width: 100%;
+  position: relative;
   border-radius: 20px;
+  background-color: #f6f7fb;
+  height: 216px;
   padding: 20px;
   margin-bottom: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 .ev-stepper__item {
@@ -262,26 +264,37 @@
   flex: 1;
 }
 
+.ev-stepper__line {
+  flex: 1;
+  height: 1px;
+  background: #606060;
+  z-index: 1;
+  margin: 0 16px;
+}
+
 .ev-stepper__icon {
-  width: 24px;
-  height: 24px;
+  width: 55px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #01b075;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
-  transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .ev-stepper__icon img {
   width: 100%;
-  height: 100%;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 15.2px;
   filter: grayscale(100%);
 }
 
 .ev-stepper__item--active .ev-stepper__icon {
-  background: #0560FD;
-  border-radius: 8px;
-  padding: 8px;
+  background-color: #0560fd;
 }
 
 .ev-stepper__item--active .ev-stepper__icon img {
@@ -289,9 +302,7 @@
 }
 
 .ev-stepper__item--done .ev-stepper__icon {
-  background: #01B075;
-  border-radius: 8px;
-  padding: 8px;
+  background-color: #01b075;
 }
 
 .ev-stepper__item--done .ev-stepper__icon img {
@@ -315,10 +326,15 @@
 }
 
 .ev-stepper__label {
-  font-size: 14px;
+  width: 100px;
+  position: relative;
+  font-size: 16px;
+  line-height: 32.25px;
   font-weight: 500;
+  font-family: 'Yekan Bakh';
   color: #606060;
   text-align: center;
+  display: inline-block;
 }
 
 .ev-stepper__item--active .ev-stepper__label {
@@ -331,14 +347,68 @@
   font-weight: 500;
 }
 
+/* Profile step - Green background */
+.ev-stepper__item--done .ev-stepper__icon {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  background-color: #01B075;
+  height: 55px;
+}
+
+.ev-stepper__item--done .ev-stepper__dot {
+  background: #01B075;
+}
+
+.ev-stepper__line--green {
+  background: #01B075;
+}
+
+/* Email verification step - Blue background with shadow */
+.ev-stepper__item--active .ev-stepper__icon {
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 0px 10px #0091d0;
+  border-radius: 10px;
+  background-color: #0560fd;
+  height: 55px;
+}
+
+.ev-stepper__item--active .ev-stepper__dot {
+  background: #0560fd;
+}
+
+.ev-stepper__item--active .ev-stepper__label {
+  color: #0560fd;
+}
+
+/* Future steps - Light blue background */
+.ev-stepper__item:not(.ev-stepper__item--active):not(.ev-stepper__item--done) .ev-stepper__icon {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  background-color: #ecf0ff;
+  height: 55px;
+}
+
+.ev-stepper__item:not(.ev-stepper__item--active):not(.ev-stepper__item--done) .ev-stepper__dot {
+  background: #606060;
+}
+
+.ev-stepper__item:not(.ev-stepper__item--active):not(.ev-stepper__item--done) .ev-stepper__label {
+  color: #606060;
+}
+
 .ev-stepper__line {
-  position: absolute;
-  top: 52px;
-  left: 12.5%;
-  right: 12.5%;
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
   height: 1px;
   background: #606060;
   z-index: 1;
+  margin: 0 16px;
 }
 
 /* Grid Layout */

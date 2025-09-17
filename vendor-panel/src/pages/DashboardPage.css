@@ -1,0 +1,1716 @@
+/* Dashboard Page Styles - Pixel Perfect Figma Match */
+
+.main-page-10 {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 1080px;
+  overflow: hidden;
+  text-align: right;
+  font-size: 16px;
+  color: #606060;
+  font-family: 'Yekan Bakh';
+}
+
+/* Sidebar */
+.rectangle-parent {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 460px;
+  height: 1080px;
+  font-size: 16px;
+  background-color: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.group-child {
+  position: absolute;
+  top: 115px;
+  left: 0px;
+  background-color: #f6f7fb;
+  width: 460px;
+  height: 965px;
+}
+
+.group-item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #ecf0ff;
+  width: 460px;
+  height: 115px;
+}
+
+/* Header Section */
+.ellipse-parent {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+}
+
+.group-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 0px 10px #0091d0;
+  border-radius: 50%;
+  background-color: #0560fd;
+  width: 55px;
+  height: 55px;
+}
+
+.group-icon {
+  position: absolute;
+  height: 65.45%;
+  width: 65.45%;
+  top: 16.36%;
+  right: 16.36%;
+  bottom: 18.18%;
+  left: 18.18%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.b {
+  position: absolute;
+  top: 25px;
+  right: 90px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #0f1723;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Notification and Back Icons */
+.vector-icon {
+  position: absolute;
+  top: 25px;
+  right: 200px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.vector-parent {
+  position: absolute;
+  top: 20px;
+  right: 250px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.main-page-10-vector-icon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.backgroundborder {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 6px;
+  background-color: #ed1c24;
+  border: 2px solid #f6f7fb;
+  box-sizing: border-box;
+  width: 18px;
+  height: 16px;
+}
+
+.b14 {
+  position: absolute;
+  top: -2px;
+  right: 3px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 20px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Dashboard Button */
+.rectangle-div {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  box-shadow: 0px 0px 10px #0091d0;
+  border-radius: 10px;
+  background-color: #0560fd;
+  width: 420px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.parent {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 420px;
+  height: 60px;
+  color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.main-page-10-b {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.main-page-10-group-child {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Navigation Items */
+.group {
+  position: absolute;
+  top: 200px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child2 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.container {
+  position: absolute;
+  top: 250px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child3 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.group-div {
+  position: absolute;
+  top: 300px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child4 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.main-page-10-parent {
+  position: absolute;
+  top: 350px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child5 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent2 {
+  position: absolute;
+  top: 450px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child6 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent3 {
+  position: absolute;
+  top: 500px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child7 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent4 {
+  position: absolute;
+  top: 600px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child8 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent5 {
+  position: absolute;
+  top: 700px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child9 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent6 {
+  position: absolute;
+  top: 750px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child10 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent7 {
+  position: absolute;
+  top: 850px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.group-child11 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent8 {
+  position: absolute;
+  top: 900px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.b12 {
+  font-size: 16px;
+  color: #606060;
+  font-weight: normal;
+}
+
+.group-child12 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+.parent9 {
+  position: absolute;
+  top: 1000px;
+  right: 20px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.b13 {
+  font-size: 16px;
+  color: #606060;
+  font-weight: normal;
+}
+
+.group-child13 {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+}
+
+/* Section Headers */
+.parent10 {
+  position: absolute;
+  top: 180px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.div {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f1723;
+}
+
+.ellipse-div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.parent11 {
+  position: absolute;
+  top: 400px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.group-child14 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.parent12 {
+  position: absolute;
+  top: 550px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.group-child15 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.parent13 {
+  position: absolute;
+  top: 650px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.group-child16 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.parent14 {
+  position: absolute;
+  top: 800px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.group-child17 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.parent15 {
+  position: absolute;
+  top: 950px;
+  right: 20px;
+  width: 420px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.group-child18 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0560fd;
+}
+
+.vertical-divider {
+  position: absolute;
+  top: calc(50% - 494px);
+  right: 70px;
+  border-left: 1px solid #0f1723;
+  box-sizing: border-box;
+  width: 1px;
+  height: 20px;
+}
+
+.vector-icon {
+  position: absolute;
+  height: 1.57%;
+  width: 3.7%;
+  top: 4.35%;
+  right: 88.48%;
+  bottom: 94.07%;
+  left: 7.83%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.vector-parent {
+  position: absolute;
+  height: 2.04%;
+  width: 6.74%;
+  top: 4.35%;
+  right: 74.13%;
+  bottom: 93.61%;
+  left: 19.13%;
+  cursor: pointer;
+  font-size: 11px;
+  color: #f6f7fb;
+}
+
+.main-page-10-vector-icon {
+  position: absolute;
+  height: 72.73%;
+  width: 70.97%;
+  top: 0%;
+  right: 29.03%;
+  bottom: 27.27%;
+  left: 0%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.backgroundborder {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 6px;
+  background-color: #ed1c24;
+  border: 2px solid #f6f7fb;
+  box-sizing: border-box;
+  width: 18px;
+  height: 16px;
+}
+
+.b14 {
+  position: absolute;
+  top: -2px;
+  right: 3.1px;
+  line-height: 23.65px;
+  display: flex;
+  align-items: center;
+  width: 12.9px;
+  height: 23.6px;
+  color: white;
+  font-size: 10px;
+}
+
+/* Main Content Cards */
+.main-page-10-child {
+  position: absolute;
+  top: 50px;
+  left: 745px;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  width: 665px;
+  height: 164px;
+}
+
+.main-page-10-item {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  width: 665px;
+  height: 164px;
+}
+
+.main-page-10-inner {
+  position: absolute;
+  top: 244px;
+  left: 745px;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  width: 665px;
+  height: 319px;
+}
+
+/* Sales Chart */
+.rectangle-group {
+  position: absolute;
+  top: 593px;
+  left: 50px;
+  width: 1360px;
+  height: 437px;
+  text-align: center;
+  font-size: 12px;
+  font-family: IRANYekan;
+}
+
+.group-child19 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  width: 1360px;
+  height: 437px;
+}
+
+.svg-icon {
+  position: absolute;
+  top: 33.11px;
+  left: 24px;
+  width: 25.6px;
+  height: 24px;
+}
+
+.b15 {
+  position: absolute;
+  top: 32.22px;
+  left: calc(50% - 628.27px);
+  font-size: 16px;
+  line-height: 25.8px;
+  display: flex;
+  font-family: 'Yekan Bakh';
+  color: #0560fd;
+  align-items: center;
+  justify-content: center;
+  width: 83.2px;
+}
+
+.b16 {
+  position: absolute;
+  top: 30px;
+  right: 31.11px;
+  font-size: 18px;
+  line-height: 32.25px;
+  display: flex;
+  font-family: 'Yekan Bakh';
+  color: #0f1723;
+  text-align: right;
+  align-items: center;
+  width: 109.8px;
+}
+
+.vector-icon2 {
+  position: absolute;
+  height: 61.33%;
+  width: 43.21%;
+  top: 22%;
+  right: 52.78%;
+  bottom: 16.68%;
+  left: 4.01%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.main-page-10-group-icon {
+  position: absolute;
+  height: 61.33%;
+  width: 40.31%;
+  top: 22%;
+  right: 55.02%;
+  bottom: 16.68%;
+  left: 4.68%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.group-icon2 {
+  position: absolute;
+  height: 61.56%;
+  width: 43.21%;
+  top: 21.88%;
+  right: 52.78%;
+  bottom: 16.56%;
+  left: 4.01%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.group-icon3 {
+  position: absolute;
+  height: 61.56%;
+  width: 90.73%;
+  top: 21.88%;
+  right: 5.26%;
+  bottom: 16.56%;
+  left: 4.01%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.group-icon4 {
+  position: absolute;
+  height: 0.23%;
+  width: 90.73%;
+  top: 83.44%;
+  right: 5.26%;
+  bottom: 16.33%;
+  left: 4.01%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.group-icon5 {
+  position: absolute;
+  height: 61.33%;
+  top: 22%;
+  bottom: 16.68%;
+  left: 47.22%;
+  max-height: 100%;
+  width: 0px;
+}
+
+.group-icon6 {
+  position: absolute;
+  height: 61.33%;
+  top: 22%;
+  bottom: 16.68%;
+  left: 4.01%;
+  max-height: 100%;
+  width: 0px;
+}
+
+.text {
+  position: absolute;
+  top: 21.08%;
+  left: 25.65%;
+  font-size: 18px;
+  color: #333;
+}
+
+.main-page-10-text {
+  position: absolute;
+  top: 22.46%;
+  left: 25.65%;
+  color: #666;
+}
+
+.text2 {
+  position: absolute;
+  top: 89.5%;
+  left: 2.28%;
+  color: #666;
+  text-align: left;
+}
+
+/* Chart X-axis labels */
+.main-page-10-group {
+  position: absolute;
+  height: 4.35%;
+  width: 90.09%;
+  top: 85.16%;
+  right: 5.89%;
+  bottom: 10.5%;
+  left: 4.02%;
+  font-size: 11px;
+}
+
+.div6 {
+  position: absolute;
+  width: 3.38%;
+  top: 0%;
+  left: 0%;
+  display: inline-block;
+}
+
+.div7 {
+  position: absolute;
+  width: 3.38%;
+  top: 0%;
+  left: 6.89%;
+  display: inline-block;
+}
+
+.div8 {
+  position: absolute;
+  width: 3%;
+  top: 0%;
+  left: 13.96%;
+  display: inline-block;
+}
+
+.div9 {
+  position: absolute;
+  width: 3.19%;
+  top: 0%;
+  left: 20.76%;
+  display: inline-block;
+}
+
+.div10 {
+  position: absolute;
+  width: 3.93%;
+  top: 0%;
+  left: 27.27%;
+  display: inline-block;
+}
+
+.div11 {
+  position: absolute;
+  width: 3.93%;
+  top: 0%;
+  left: 34.16%;
+  display: inline-block;
+}
+
+.div12 {
+  position: absolute;
+  width: 3.93%;
+  top: 0%;
+  left: 41.05%;
+  display: inline-block;
+}
+
+.div13 {
+  position: absolute;
+  width: 3.57%;
+  top: 0%;
+  left: 48.12%;
+  display: inline-block;
+}
+
+.div14 {
+  position: absolute;
+  width: 3.57%;
+  top: 0%;
+  left: 55.01%;
+  display: inline-block;
+}
+
+.div15 {
+  position: absolute;
+  width: 4.12%;
+  top: 0%;
+  left: 61.62%;
+  display: inline-block;
+}
+
+.div16 {
+  position: absolute;
+  width: 4.31%;
+  top: 0%;
+  left: 68.41%;
+  display: inline-block;
+}
+
+.div17 {
+  position: absolute;
+  width: 4.12%;
+  top: 0%;
+  left: 75.39%;
+  display: inline-block;
+}
+
+.div18 {
+  position: absolute;
+  width: 4.31%;
+  top: 0%;
+  left: 82.19%;
+  display: inline-block;
+}
+
+.div19 {
+  position: absolute;
+  width: 3.57%;
+  top: 0%;
+  left: 89.45%;
+  display: inline-block;
+}
+
+.div20 {
+  position: absolute;
+  width: 3.75%;
+  top: 0%;
+  left: 96.25%;
+  display: inline-block;
+}
+
+/* Chart Y-axis labels */
+.group2 {
+  position: absolute;
+  height: 65.68%;
+  width: 0.63%;
+  top: 19.94%;
+  right: 2.21%;
+  bottom: 14.39%;
+  left: 97.17%;
+  text-align: left;
+  font-size: 11px;
+  color: #81858b;
+}
+
+.div21 {
+  position: absolute;
+  width: 75.29%;
+  top: 93.38%;
+  left: 0%;
+  display: inline-block;
+}
+
+.div22 {
+  position: absolute;
+  width: 50.59%;
+  top: 70.03%;
+  left: 0%;
+  display: inline-block;
+}
+
+.div23 {
+  position: absolute;
+  width: 75.29%;
+  top: 46.69%;
+  left: 0%;
+  display: inline-block;
+}
+
+.div24 {
+  position: absolute;
+  width: 100%;
+  top: 23.34%;
+  left: 0%;
+  display: inline-block;
+}
+
+.div25 {
+  position: absolute;
+  width: 88.24%;
+  top: 0%;
+  left: 0%;
+  display: inline-block;
+}
+
+.group3 {
+  position: absolute;
+  height: 65.68%;
+  width: 0.63%;
+  top: 19.94%;
+  right: 97.17%;
+  bottom: 14.39%;
+  left: 2.21%;
+  text-align: right;
+  font-size: 11px;
+}
+
+.div26 {
+  position: absolute;
+  width: 75.29%;
+  top: 93.38%;
+  left: 25.09%;
+  display: inline-block;
+}
+
+.div27 {
+  position: absolute;
+  width: 50.59%;
+  top: 70.03%;
+  left: 50.19%;
+  display: inline-block;
+}
+
+.div28 {
+  position: absolute;
+  width: 75.29%;
+  top: 46.69%;
+  left: 25.09%;
+  display: inline-block;
+}
+
+.div30 {
+  position: absolute;
+  width: 88.24%;
+  top: 0%;
+  left: 12.55%;
+  display: inline-block;
+}
+
+/* Chart Legend */
+.background-parent {
+  position: absolute;
+  top: calc(50% + 176.5px);
+  left: 1033.53px;
+  width: 291.9px;
+  height: 25.8px;
+  text-align: right;
+  font-family: 'Yekan Bakh FaNum';
+}
+
+.background {
+  position: absolute;
+  top: calc(50% - 4.01px);
+  left: 269.48px;
+  box-shadow: 0px 0px 10px #0091d0;
+  border-radius: 2px;
+  background-color: #0091d0;
+  width: 22.4px;
+  height: 8px;
+}
+
+.div31 {
+  position: absolute;
+  top: 0px;
+  right: 30.61px;
+  line-height: 25.8px;
+  display: flex;
+  align-items: center;
+  width: 90.9px;
+  height: 25.8px;
+}
+
+.main-page-10-background {
+  position: absolute;
+  top: calc(50% - 4.01px);
+  left: 113.86px;
+  box-shadow: 0px 0px 10px #0091d0;
+  border-radius: 2px;
+  background-color: #0560fd;
+  width: 22.4px;
+  height: 8px;
+}
+
+.div32 {
+  position: absolute;
+  top: 0px;
+  right: 186.2px;
+  line-height: 25.8px;
+  font-family: 'Yekan Bakh';
+  display: flex;
+  align-items: center;
+  width: 105.7px;
+  height: 25.8px;
+}
+
+.group-child20 {
+  position: absolute;
+  height: 61.78%;
+  width: 89.32%;
+  top: 22.43%;
+  right: 6.28%;
+  bottom: 15.79%;
+  left: 4.4%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+/* Sold Items Card */
+.parent16 {
+  position: absolute;
+  top: 79px;
+  right: 540px;
+  width: 178px;
+  height: 105.3px;
+  font-size: 18px;
+  color: #0560fd;
+}
+
+.b17 {
+  position: absolute;
+  top: 0px;
+  right: 0.55px;
+  line-height: 30.1px;
+  color: #0f1723;
+}
+
+.parent17 {
+  position: absolute;
+  top: 40px;
+  right: 0.4px;
+  width: 46.6px;
+  height: 26px;
+  font-size: 19px;
+}
+
+.b18 {
+  position: absolute;
+  top: 1.02px;
+  right: -0.04px;
+  line-height: 23.75px;
+}
+
+.b19 {
+  position: absolute;
+  top: 0px;
+  right: 28.6px;
+  font-size: 16px;
+  line-height: 25.8px;
+  color: #606060;
+}
+
+.svg-parent {
+  position: absolute;
+  top: 74.25px;
+  left: 0px;
+  width: 178px;
+  height: 31px;
+  font-family: IRANYekan;
+}
+
+.main-page-10-svg-icon {
+  position: absolute;
+  top: 6.6px;
+  left: 160px;
+  width: 18px;
+  height: 18px;
+}
+
+.svg-icon2 {
+  position: absolute;
+  top: 6.6px;
+  left: 160px;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.b20 {
+  position: absolute;
+  top: 0px;
+  right: 22.37px;
+  line-height: 30.1px;
+}
+
+.b21 {
+  position: absolute;
+  top: 1.69px;
+  right: 62px;
+  font-size: 16px;
+  line-height: 25.8px;
+  color: #606060;
+}
+
+.rectangle-container {
+  position: absolute;
+  top: 80px;
+  left: 775px;
+  box-shadow: 0px 0px 10px #0091d0;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.group-child21 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 10px;
+  background-color: #0560fd;
+  width: 100px;
+  height: 35px;
+}
+
+.svg-group {
+  position: absolute;
+  top: 5px;
+  left: 13px;
+  width: 69.5px;
+  height: 25.9px;
+}
+
+.svg-icon3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+}
+
+.b22 {
+  position: absolute;
+  top: 0.11px;
+  left: calc(50% - 2.75px);
+  line-height: 25.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37.5px;
+  height: 25.8px;
+}
+
+/* Gross Income Card */
+.parent18 {
+  position: absolute;
+  top: 79px;
+  right: 1235px;
+  width: 178px;
+  height: 105.3px;
+  font-size: 18px;
+  color: #0560fd;
+}
+
+.parent19 {
+  position: absolute;
+  top: 40px;
+  right: 0.4px;
+  width: 111.6px;
+  height: 26px;
+  font-size: 19px;
+}
+
+.b25 {
+  position: absolute;
+  top: 0px;
+  right: 88.6px;
+  font-size: 16px;
+  line-height: 25.8px;
+  color: #606060;
+}
+
+.svg-icon5 {
+  position: absolute;
+  top: 6.6px;
+  left: 153px;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.main-page-10-rectangle-parent {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  box-shadow: 0px 0px 10px #0091d0;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.main-page-10-main-page-10-child {
+  position: absolute;
+  top: 244px;
+  left: 50px;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  width: 665px;
+  height: 319px;
+}
+
+.rectangle-parent2 {
+  position: absolute;
+  top: 274px;
+  left: 81px;
+  box-shadow: 0px 0px 10px #0091d0;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.svg-icon8 {
+  position: absolute;
+  top: 349.19px;
+  left: 81px;
+  width: 24px;
+  height: 24px;
+}
+
+.svg-icon9 {
+  position: absolute;
+  top: 387.19px;
+  left: 81px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Latest Orders Table */
+.parent20 {
+  position: absolute;
+  top: 346px;
+  right: 1298px;
+  width: 64px;
+  height: 187px;
+  text-align: center;
+}
+
+.b30 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  line-height: 30.1px;
+}
+
+.b31 {
+  position: absolute;
+  top: 39px;
+  right: 0px;
+  line-height: 30.1px;
+}
+
+.b32 {
+  position: absolute;
+  top: 78px;
+  right: 0px;
+  line-height: 30.1px;
+}
+
+.b33 {
+  position: absolute;
+  top: 117px;
+  right: 0px;
+  line-height: 30.1px;
+}
+
+.b34 {
+  position: absolute;
+  top: 156px;
+  right: 0px;
+  line-height: 30.1px;
+}
+
+.parent21 {
+  position: absolute;
+  top: 346px;
+  right: 1428px;
+  width: 30px;
+  height: 187px;
+  text-align: center;
+}
+
+.svg-icon10 {
+  position: absolute;
+  top: 425.19px;
+  left: 81px;
+  width: 24px;
+  height: 24px;
+}
+
+.parent22 {
+  position: absolute;
+  top: 346px;
+  right: 1526px;
+  width: 101px;
+  height: 187px;
+  text-align: center;
+}
+
+.b40 {
+  position: absolute;
+  top: 0px;
+  right: 1px;
+  line-height: 30.1px;
+}
+
+.b41 {
+  position: absolute;
+  top: 39px;
+  right: 2px;
+  line-height: 30.1px;
+}
+
+.b42 {
+  position: absolute;
+  top: 78px;
+  right: 1px;
+  line-height: 30.1px;
+}
+
+.b43 {
+  position: absolute;
+  top: 117px;
+  right: 1px;
+  line-height: 30.1px;
+}
+
+.parent23 {
+  position: absolute;
+  top: 346px;
+  right: 1699px;
+  width: 78px;
+  height: 187px;
+  text-align: center;
+}
+
+.b45 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  line-height: 30.1px;
+  white-space: pre-wrap;
+}
+
+.b46 {
+  position: absolute;
+  top: 39px;
+  right: 0px;
+  line-height: 30.1px;
+  white-space: pre-wrap;
+}
+
+.b47 {
+  position: absolute;
+  top: 78px;
+  right: 0px;
+  line-height: 30.1px;
+  white-space: pre-wrap;
+}
+
+.b48 {
+  position: absolute;
+  top: 117px;
+  right: 0px;
+  line-height: 30.1px;
+  white-space: pre-wrap;
+}
+
+.b49 {
+  position: absolute;
+  top: 156px;
+  right: 0px;
+  line-height: 30.1px;
+  white-space: pre-wrap;
+}
+
+.parent24 {
+  position: absolute;
+  top: 346px;
+  right: 1236px;
+  width: 25px;
+  height: 187px;
+  text-align: center;
+  color: #0f1723;
+}
+
+.b50 {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  line-height: 30.1px;
+}
+
+.b51 {
+  position: absolute;
+  top: 0px;
+  right: 17px;
+  line-height: 30.1px;
+}
+
+.b52 {
+  position: absolute;
+  top: 39px;
+  right: 1px;
+  line-height: 30.1px;
+}
+
+.b53 {
+  position: absolute;
+  top: 39px;
+  right: 17px;
+  line-height: 30.1px;
+}
+
+.b56 {
+  position: absolute;
+  top: 78px;
+  right: 17px;
+  line-height: 30.1px;
+}
+
+.b58 {
+  position: absolute;
+  top: 117px;
+  right: 17px;
+  line-height: 30.1px;
+}
+
+.b59 {
+  position: absolute;
+  top: 156px;
+  right: 17px;
+  line-height: 30.1px;
+}
+
+.svg-icon11 {
+  position: absolute;
+  top: 463.19px;
+  left: 81px;
+  width: 24px;
+  height: 24px;
+}
+
+.svg-icon12 {
+  position: absolute;
+  top: 501.19px;
+  left: 81px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Order & Shipping Details */
+.b60 {
+  position: absolute;
+  top: 343.6px;
+  right: 540px;
+  line-height: 30.1px;
+}
+
+.b61 {
+  position: absolute;
+  top: 276px;
+  right: 1235px;
+  font-size: 18px;
+  line-height: 32.25px;
+  color: #0f1723;
+}
+
+.b62 {
+  position: absolute;
+  top: 337.3px;
+  right: 820px;
+  font-size: 19px;
+  line-height: 39.9px;
+  font-family: IRANYekan;
+}
+
+.b63 {
+  position: absolute;
+  top: 397px;
+  right: 540px;
+  line-height: 30.1px;
+}
+
+.svg-icon13 {
+  position: absolute;
+  top: 347.19px;
+  left: 775px;
+  width: 24px;
+  height: 24px;
+}
+
+.b64 {
+  position: absolute;
+  top: 450px;
+  right: 540px;
+  line-height: 30.1px;
+}
+
+.b65 {
+  position: absolute;
+  top: 391px;
+  right: 819.3px;
+  font-size: 19px;
+  line-height: 39.9px;
+  display: flex;
+  font-family: IRANYekan;
+  align-items: center;
+  width: 9.7px;
+  height: 39.9px;
+}
+
+.svg-icon14 {
+  position: absolute;
+  top: 400px;
+  left: 775px;
+  width: 24px;
+  height: 24px;
+}
+
+.b66 {
+  position: absolute;
+  top: 503px;
+  right: 541px;
+  line-height: 30.1px;
+}
+
+.svg-icon15 {
+  position: absolute;
+  top: 453px;
+  left: 775px;
+  width: 24px;
+  height: 24px;
+}
+
+.b67 {
+  position: absolute;
+  top: 445px;
+  right: 819.3px;
+  font-size: 19px;
+  line-height: 39.9px;
+  display: flex;
+  font-family: IRANYekan;
+  align-items: center;
+  width: 9.7px;
+  height: 39.9px;
+}
+
+.svg-icon16 {
+  position: absolute;
+  top: 506px;
+  left: 775px;
+  width: 24px;
+  height: 24px;
+}
+
+.b68 {
+  position: absolute;
+  top: 499px;
+  right: 819.3px;
+  font-size: 19px;
+  line-height: 39.9px;
+  display: flex;
+  font-family: IRANYekan;
+  align-items: center;
+  width: 9.7px;
+  height: 39.9px;
+}
+
+.b69 {
+  position: absolute;
+  top: 274px;
+  right: 540.55px;
+  font-size: 18px;
+  line-height: 32.25px;
+  color: #0f1723;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1920px) {
+  .main-page-10 {
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+}
+
+@media (max-width: 1440px) {
+  .main-page-10 {
+    transform: scale(0.6);
+    transform-origin: top right;
+  }
+}

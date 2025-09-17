@@ -1,7 +1,7 @@
-/* Send Documents Page Styles */
+/* Send Documents Page Styles - Exact Match with Image */
 
 .sd-layout {
-  direction: ltr;
+  direction: rtl;
   min-height: 100vh;
   background: #ffffff;
   font-family: var(--font-family);
@@ -9,10 +9,10 @@
   margin: 0;
   display: flex;
   position: relative;
-  text-align: left;
+  text-align: right;
 }
 
-/* Blurred Sidebar */
+/* Sidebar */
 .sd-sidebar {
   position: fixed;
   right: 0;
@@ -20,13 +20,11 @@
   width: 320px;
   height: 100vh;
   z-index: 10;
-  filter: blur(1px);
-  opacity: 0.4;
-  pointer-events: none;
   overflow: hidden;
   border-left: 1px solid #E5E7EB;
   display: flex;
   flex-direction: column;
+  background: #ffffff;
 }
 
 .sd-sidebar__header {
@@ -34,7 +32,7 @@
   background: #ffffff;
   border-bottom: 1px solid #E5E7EB;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -47,6 +45,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  align-self: flex-start;
 }
 
 .sd-sidebar__avatar-icon {
@@ -162,6 +161,33 @@
   text-align: right;
 }
 
+.sd-sidebar__dashboard-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #0560FD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.sd-sidebar__dashboard-btn:hover {
+  background: #0456E6;
+}
+
+.sd-sidebar__btn-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
 /* Main Content */
 .sd-main {
   flex: 1;
@@ -181,15 +207,18 @@
 
 /* Stepper */
 .sd-stepper {
-  background: #F6F7FB;
+  width: 100%;
+  position: relative;
   border-radius: 20px;
+  background-color: #ffffff;
+  height: 216px;
   padding: 20px;
   margin-bottom: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  direction: rtl;
+  border: 1px solid #E5E7EB;
 }
 
 .sd-stepper__item {
@@ -201,28 +230,39 @@
   flex: 1;
 }
 
+.sd-stepper__line {
+  flex: 1;
+  height: 1px;
+  background: #606060;
+  z-index: 1;
+  margin: 0 16px;
+}
+
 .sd-stepper__icon {
-  width: 40px;
-  height: 40px;
+  width: 55px !important;
+  height: 55px !important;
+  position: relative;
+  border-radius: 10px;
+  background-color: #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
-  transition: all 0.3s ease;
-  background: #F5F5F5;
-  border-radius: 8px;
-  padding: 8px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .sd-stepper__icon img {
-  width: 24px;
-  height: 24px;
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 15.2px;
   filter: grayscale(100%);
 }
 
 .sd-stepper__item--active .sd-stepper__icon {
-  background: #0560FD;
-  box-shadow: 0 0 10px rgba(5, 96, 253, 0.3);
+  background-color: #0560fd;
+  box-shadow: 0px 0px 10px #0560fd;
 }
 
 .sd-stepper__item--active .sd-stepper__icon img {
@@ -230,18 +270,42 @@
 }
 
 .sd-stepper__item--done .sd-stepper__icon {
-  background: #01B075;
+  background-color: #10b981;
+  box-shadow: 0px 0px 10px #10b981;
+}
+
+/* Profile icon should be green */
+.sd-stepper__item:first-child .sd-stepper__icon {
+  background-color: #10b981 !important;
+  box-shadow: 0px 0px 10px #10b981 !important;
+}
+
+.sd-stepper__item:first-child .sd-stepper__icon img {
+  filter: brightness(0) invert(1) !important;
+}
+
+.sd-stepper__item:first-child .sd-stepper__dot {
+  background: #10b981 !important;
 }
 
 .sd-stepper__item--done .sd-stepper__icon img {
   filter: brightness(0) invert(1);
 }
 
+.sd-stepper__item--future .sd-stepper__icon {
+  background-color: #e5e7eb;
+  box-shadow: 0px 0px 10px #9ca3af;
+}
+
+.sd-stepper__item--future .sd-stepper__icon img {
+  filter: grayscale(100%);
+}
+
 .sd-stepper__dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #606060;
+  background: #9ca3af;
   margin-bottom: 8px;
 }
 
@@ -250,14 +314,23 @@
 }
 
 .sd-stepper__item--done .sd-stepper__dot {
-  background: #01B075;
+  background: #10b981;
+}
+
+.sd-stepper__item--future .sd-stepper__dot {
+  background: #9ca3af;
 }
 
 .sd-stepper__label {
-  font-size: 14px;
+  width: 100px;
+  position: relative;
+  font-size: 16px;
+  line-height: 32.25px;
   font-weight: 500;
+  font-family: 'Yekan Bakh';
   color: #606060;
   text-align: center;
+  display: inline-block;
 }
 
 .sd-stepper__item--active .sd-stepper__label {
@@ -265,23 +338,42 @@
   font-weight: 500;
 }
 
-.sd-stepper__line {
-  position: absolute;
-  top: 52px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 1px;
-  background: #606060;
-  z-index: 1;
+.sd-stepper__item--done .sd-stepper__label {
+  color: #606060;
+  font-weight: 500;
+}
+
+.sd-stepper__item--done .sd-stepper__icon {
+  background-color: #01b075;
+}
+
+.sd-stepper__item--done .sd-stepper__dot {
+  background: #01B075;
 }
 
 .sd-stepper__line--green {
-  background: #01B075;
+  background: #10b981;
+}
+
+.sd-stepper__line {
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  height: 1px;
+  background: #606060;
+  z-index: 1;
+  margin: 0 16px;
+}
+
+.sd-stepper__line--green {
+  background: #10b981;
 }
 
 /* First step should be gray, not green */
 .sd-stepper__item:first-child .sd-stepper__icon {
-  background: #F5F5F5;
+  background-color: #ecf0ff;
 }
 
 .sd-stepper__item:first-child .sd-stepper__icon img {
@@ -294,7 +386,7 @@
 
 /* Pending steps styling */
 .sd-stepper__item:not(.sd-stepper__item--active):not(.sd-stepper__item--done) .sd-stepper__icon {
-  background: #F5F5F5;
+  background-color: #ecf0ff;
 }
 
 .sd-stepper__item:not(.sd-stepper__item--active):not(.sd-stepper__item--done) .sd-stepper__icon img {
@@ -315,7 +407,7 @@
 
 /* Uploads Card */
 .sd-uploads-card {
-  background: #F6F7FB;
+  background: #ffffff;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -325,12 +417,22 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border: 1px solid #E5E7EB;
+}
+
+.sd-uploads-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F1723;
+  margin: 0 0 20px 0;
+  text-align: right;
 }
 
 .sd-uploads-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  margin-bottom: 20px;
 }
 
 .sd-upload-area {
@@ -360,12 +462,13 @@
 
 /* Form Card */
 .sd-form-card {
-  background: #F6F7FB;
+  background: #ffffff;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   direction: rtl;
   text-align: right;
+  border: 1px solid #E5E7EB;
 }
 
 .sd-form-title {
@@ -481,6 +584,7 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 20px;
+  border: 1px solid #E5E7EB;
 }
 
 .sd-note-title {

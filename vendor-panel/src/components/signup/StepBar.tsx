@@ -7,7 +7,6 @@ const StepBar: React.FC = () => {
     { id: 'contract', label: 'ارسال قرارداد', isActive: false },
     { id: 'account', label: 'ثبت شماره حساب', isActive: false },
     { id: 'documents', label: 'ارسال مدارک', isActive: false },
-    { id: 'training', label: 'آموزش', isActive: false },
   ];
 
   return (

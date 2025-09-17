@@ -7,7 +7,11 @@ import EmailVerificationPage from "./pages/EmailVerificationPage";
 import ContractPage from "./pages/ContractPage";
 import BankAccountPage from "./pages/BankAccountPage";
 import SendDocumentsPage from "./pages/SendDocumentsPage";
+import SellerPanel from "./pages/SellerPanel";
 import Dashboard from "./pages/Dashboard";
+import NewDashboard from "./pages/NewDashboard";
+import DashboardPage from "./pages/DashboardPage";
+import { ROUTES } from "./routes/routes";
 
 const isAuthed = () => !!localStorage.getItem("token");           // بعد از OTP ست می‌کنیم
 const isOnboarded = () => localStorage.getItem("onboarded") === "1"; // بعد از ثبت‌نام ست می‌کنیم
@@ -58,21 +62,32 @@ export default function App() {
                     </RequireAuth>
                 }
             />
+            {/* Send Documents Page */}
             <Route
-                path="/send-documents"
+                path={ROUTES.sendDocuments}
                 element={
                     <RequireAuth>
-                        <SendDocumentsPage />
+                        {isOnboarded() ? <SendDocumentsPage /> : <Navigate to="/signup" replace />}
                     </RequireAuth>
                 }
             />
 
-            {/* داشبورد فقط وقتی مجاز است که ثبت‌نام کامل شده باشد */}
+            {/* Seller Panel */}
             <Route
-                path="/dashboard"
+                path={ROUTES.sellerPanel}
                 element={
                     <RequireAuth>
-                        {isOnboarded() ? <Dashboard /> : <Navigate to="/signup" replace />}
+                        {isOnboarded() ? <SellerPanel /> : <Navigate to="/signup" replace />}
+                    </RequireAuth>
+                }
+            />
+
+            {/* Dashboard - redirect to Seller Panel */}
+            <Route
+                path={ROUTES.dashboard}
+                element={
+                    <RequireAuth>
+                        {isOnboarded() ? <Navigate to={ROUTES.sellerPanel} replace /> : <Navigate to="/signup" replace />}
                     </RequireAuth>
                 }
             />

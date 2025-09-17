@@ -6,11 +6,13 @@ type PersonTab = "natural" | "legal";
 
 const SignupPage: React.FC = () => {
   const [tab, setTab] = useState<PersonTab>("natural");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   React.useEffect(() => {
     if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("dir", "ltr");
+      document.documentElement.setAttribute("dir", "rtl");
+      document.documentElement.setAttribute("data-theme", "light");
     }
   }, []);
 
@@ -22,44 +24,33 @@ const SignupPage: React.FC = () => {
   const naturalForm = useMemo(
     () => (
       <>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="n-username" className="sp-field__label">نام کاربری</label>
-            <input id="n-username" type="text" className="sp-input" />
-          </div>
-          <div className="sp-field">
-            <label htmlFor="n-firstname" className="sp-field__label">نام</label>
-            <input id="n-firstname" type="text" className="sp-input" />
-          </div>
-        </div>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="n-lastname" className="sp-field__label">نام خانوادگی</label>
-            <input id="n-lastname" type="text" className="sp-input" />
-          </div>
-          <div className="sp-field">
-            <label htmlFor="n-display" className="sp-field__label">نام نمایشی</label>
-            <input id="n-display" type="text" className="sp-input" />
-          </div>
-        </div>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="n-birth" className="sp-field__label">تاریخ تولد</label>
-            <input id="n-birth" type="date" className="sp-input" />
-          </div>
-          <div className="sp-field">
-            <label htmlFor="n-gender" className="sp-field__label">جنسیت</label>
-            <select id="n-gender" className="sp-input">
-              <option value="">انتخاب کنید</option>
-              <option value="female">زن</option>
-              <option value="male">مرد</option>
-            </select>
-          </div>
-        </div>
-        <div className="sp-form-divider" aria-hidden />
         <div className="sp-field">
-          <label htmlFor="n-bio" className="sp-field__label">متن بیوگرافی</label>
-          <textarea id="n-bio" className="sp-textarea" rows={5} />
+          <label htmlFor="n-username" className="sp-field__label">نام کاربری</label>
+          <input id="n-username" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="n-firstname" className="sp-field__label">نام</label>
+          <input id="n-firstname" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="n-lastname" className="sp-field__label">نام خانوادگی</label>
+          <input id="n-lastname" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="n-display" className="sp-field__label">نام نمایشی</label>
+          <input id="n-display" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="n-birth" className="sp-field__label">تاریخ تولد</label>
+          <input id="n-birth" type="date" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="n-gender" className="sp-field__label">جنسیت</label>
+          <select id="n-gender" className="sp-input">
+            <option value="">انتخاب کنید</option>
+            <option value="female">زن</option>
+            <option value="male">مرد</option>
+          </select>
         </div>
       </>
     ),
@@ -69,42 +60,46 @@ const SignupPage: React.FC = () => {
   const legalForm = useMemo(
     () => (
       <>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="l-username" className="sp-field__label">نام کاربری</label>
-            <input id="l-username" type="text" className="sp-input" />
-          </div>
-          <div className="sp-field">
-            <label htmlFor="l-company" className="sp-field__label">نام شرکت</label>
-            <input id="l-company" type="text" className="sp-input" />
-          </div>
-        </div>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="l-nid" className="sp-field__label">شناسه ملی شرکت</label>
-            <input id="l-nid" type="text" className="sp-input" />
-          </div>
-          <div className="sp-field">
-            <label htmlFor="l-display" className="sp-field__label">نام نمایشی</label>
-            <input id="l-display" type="text" className="sp-input" />
-          </div>
-        </div>
-        <div className="sp-form-row">
-          <div className="sp-field">
-            <label htmlFor="l-industry" className="sp-field__label">زمینه فعالیت</label>
-            <select id="l-industry" className="sp-input">
-              <option value="">انتخاب کنید</option>
-              <option value="cosmetics">آرایشی و بهداشتی</option>
-              <option value="digital">کالای دیجیتال</option>
-              <option value="tools">ابزار و یراق</option>
-            </select>
-          </div>
-          <div className="sp-field"></div>
-        </div>
-        <div className="sp-form-divider" aria-hidden />
         <div className="sp-field">
-          <label htmlFor="l-bio" className="sp-field__label">متن بیوگرافی</label>
-          <textarea id="l-bio" className="sp-textarea" rows={5} />
+          <label htmlFor="l-username" className="sp-field__label">نام کاربری</label>
+          <input id="l-username" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-company" className="sp-field__label">نام شرکت</label>
+          <input id="l-company" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-nid" className="sp-field__label">شناسه ملی شرکت</label>
+          <input id="l-nid" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-display" className="sp-field__label">نام نمایشی</label>
+          <input id="l-display" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-industry" className="sp-field__label">زمینه فعالیت</label>
+          <select id="l-industry" className="sp-input">
+            <option value="">انتخاب کنید</option>
+            <option value="cosmetics">آرایشی و بهداشتی</option>
+            <option value="digital">کالای دیجیتال</option>
+            <option value="tools">ابزار و یراق</option>
+          </select>
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-field1" className="sp-field__label">فیلد نمونه</label>
+          <input id="l-field1" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-field2" className="sp-field__label">فیلد نمونه</label>
+          <input id="l-field2" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-field3" className="sp-field__label">فیلد نمونه</label>
+          <input id="l-field3" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-field4" className="sp-field__label">فیلد نمونه</label>
+          <input id="l-field4" type="text" className="sp-input" />
         </div>
       </>
     ),
@@ -113,8 +108,22 @@ const SignupPage: React.FC = () => {
 
   return (
     <div className="sp-layout">
+      {/* Mobile Menu Button */}
+      <button 
+        className="sp-mobile-menu-btn"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        ☰
+      </button>
+
       {/* Sidebar */}
-      <aside className="sp-sidebar sp-sidebar--blurred">
+      <aside className={`sp-sidebar sp-sidebar--blurred ${sidebarOpen ? 'sp-sidebar--open' : ''}`}>
+        <button 
+          className="sp-sidebar__close-btn"
+          onClick={() => setSidebarOpen(false)}
+        >
+          ×
+        </button>
         <div className="sp-sidebar__header">
           <div className="sp-sidebar__avatar">
             <img src="/icons/Group 45650.svg" alt="User" className="sp-sidebar__avatar-icon" />
@@ -217,33 +226,25 @@ const SignupPage: React.FC = () => {
         <div className="sp-content">
           {/* Stepper */}
           <section className="sp-stepper">
-            <div className="sp-stepper__item">
+            <div className="sp-stepper__item sp-stepper__item--active">
               <div className="sp-stepper__icon">
-                <img src="/icons/Group 45698.svg" alt="Learn" />
+                <img src="/icons/PROfile.svg" alt="Profile" />
               </div>
               <div className="sp-stepper__dot"></div>
-              <span className="sp-stepper__label">آموزش</span>
+              <span className="sp-stepper__label">پروفایل</span>
             </div>
             <div className="sp-stepper__line"></div>
             <div className="sp-stepper__item">
               <div className="sp-stepper__icon">
-                <img src="/icons/Group 45699.svg" alt="Docs" />
+                <img src="/icons/Vector (1).svg" alt="Email" />
               </div>
               <div className="sp-stepper__dot"></div>
-              <span className="sp-stepper__label">ارسال مدارک</span>
+              <span className="sp-stepper__label">تایید ایمیل</span>
             </div>
             <div className="sp-stepper__line"></div>
             <div className="sp-stepper__item">
               <div className="sp-stepper__icon">
-                <img src="/icons/Group 45700.svg" alt="Bank" />
-              </div>
-              <div className="sp-stepper__dot"></div>
-              <span className="sp-stepper__label">ثبت شماره حساب</span>
-            </div>
-            <div className="sp-stepper__line"></div>
-            <div className="sp-stepper__item">
-              <div className="sp-stepper__icon">
-                <img src="/icons/Group 45701.svg" alt="Contract" />
+                <img src="/icons/Group.svg" alt="Contract" />
               </div>
               <div className="sp-stepper__dot"></div>
               <span className="sp-stepper__label">ارسال قرارداد</span>
@@ -251,82 +252,81 @@ const SignupPage: React.FC = () => {
             <div className="sp-stepper__line"></div>
             <div className="sp-stepper__item">
               <div className="sp-stepper__icon">
-                <img src="/icons/Group 45702.svg" alt="Email" />
+                <img src="/icons/Vector (2).svg" alt="Bank" />
               </div>
               <div className="sp-stepper__dot"></div>
-              <span className="sp-stepper__label">تایید ایمیل</span>
+              <span className="sp-stepper__label">ثبت شماره حساب</span>
             </div>
             <div className="sp-stepper__line"></div>
-            <div className="sp-stepper__item sp-stepper__item--active">
+            <div className="sp-stepper__item">
               <div className="sp-stepper__icon">
-                <img src="/icons/Group 45650.svg" alt="Profile" />
+                <img src="/icons/Vector (3).svg" alt="Docs" />
               </div>
               <div className="sp-stepper__dot"></div>
-              <span className="sp-stepper__label">پروفایل</span>
+              <span className="sp-stepper__label">ارسال مدارک</span>
             </div>
           </section>
 
           {/* Two Column Layout */}
           <div className="sp-grid">
-            {/* Left Column - Uploads */}
-            <aside className="sp-uploads-card">
-              <div className="sp-banner">
-                <div className="sp-banner__bg"></div>
-                <div className="sp-avatar">
-                  <div className="sp-avatar__icon">👤</div>
+            {/* Left Column - Form */}
+            <section className="sp-form">
+              <h2 className="sp-form__title">اطلاعات کاربری شما</h2>
+              <div className="sp-tabs">
+                <button
+                  className={`sp-tab-haghighi ${tab === "natural" ? "active" : ""}`}
+                  onClick={() => setTab("natural")}
+                >
+                  حقیقی
+                </button>
+                <button
+                  className={`sp-tab-hoghooghi ${tab === "legal" ? "active" : ""}`}
+                  onClick={() => setTab("legal")}
+                >
+                  حقوقی
+                </button>
+              </div>
+
+              <form className="sp-form-fields" onSubmit={handleSubmit}>
+                <div className="sp-fields-grid">
+                  {tab === "natural" ? naturalForm : legalForm}
                 </div>
+
+                <div className="sp-divider"></div>
+                <div className="sp-field">
+                  <label htmlFor="bio" className="sp-field__label">متن بیوگرافی</label>
+                  <textarea id="bio" className="sp-textarea" rows={5} />
+                </div>
+
+                <button type="submit" className="sp-btn-primary">
+                  <span className="sp-btn__icon">✓</span>
+                  ثبت اطلاعات
+                </button>
+              </form>
+            </section>
+
+            {/* Right Column - Uploads */}
+            <aside className="sp-uploads">
+              <div className="sp-banner">
+                <div className="sp-avatar"></div>
               </div>
 
               <div className="sp-upload-tiles">
                 <div className="sp-upload-tile">
-                  <div className="sp-upload-tile__icon">📤</div>
                   <span className="sp-upload-tile__title">آپلود بنر بزرگ</span>
-                  <span className="sp-upload-tile__hint">۶۴۰ × ۳۶۰</span>
+                  <span className="sp-upload-tile__hint">۱۲۸۰ × ۳۸۰</span>
                 </div>
                 <div className="sp-upload-tile">
-                  <div className="sp-upload-tile__icon">🖼️</div>
                   <span className="sp-upload-tile__title">آپلود لوگو</span>
                   <span className="sp-upload-tile__hint">۱۸۰ × ۱۸۰</span>
                 </div>
               </div>
 
               <div className="sp-upload-actions">
-                <button className="sp-btn sp-btn--soft">تغییر رمز عبور</button>
-                <button className="sp-btn sp-btn--soft">تغییر شماره موبایل</button>
+                <button className="sp-soft-btn">تغییر شماره موبایل</button>
+                <button className="sp-soft-btn">تغییر رمز عبور</button>
               </div>
             </aside>
-
-            {/* Right Column - Form */}
-            <section className="sp-form-card">
-              <div className="sp-form__header">
-                <h2 className="sp-form__title">اطلاعات کاربری شما</h2>
-                <div className="sp-tabs">
-                  <button
-                    className={`sp-tab ${tab === "natural" ? "active" : ""}`}
-                    onClick={() => setTab("natural")}
-                  >
-                    حقیقی
-                  </button>
-                  <button
-                    className={`sp-tab ${tab === "legal" ? "active" : ""}`}
-                    onClick={() => setTab("legal")}
-                  >
-                    حقوقی
-                  </button>
-                </div>
-              </div>
-
-              <form className="sp-form" onSubmit={handleSubmit}>
-                {tab === "natural" ? naturalForm : legalForm}
-
-                <div className="sp-form__actions">
-                  <button type="submit" className="sp-btn sp-btn--primary">
-                    <span className="sp-btn__icon">✓</span>
-                    ثبت اطلاعات
-                  </button>
-                </div>
-              </form>
-            </section>
         </div>
       </div>
       </main>

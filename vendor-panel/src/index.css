@@ -1,3 +1,28 @@
+/* Add base normalization for Farsi */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #0f1723;
+  direction: rtl;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --c-primary: #0560fd;
+  --c-muted: #606060;
+}
+
+body {
+  font-family: 'Yekan Bakh', 'Vazirmatn', system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
 @import "./theme/tokens.css";
 @import "./styles/responsive.css";
 @import "./styles/dark-mode.css";
@@ -9,7 +34,7 @@
   height:100%;
       width:100%;
     color-scheme: light;
-    direction: ltr;
+    direction: rtl;
   }
   :root[data-theme="dark"]{
     color-scheme: dark;
@@ -19,23 +44,23 @@
       width:100%;
     @apply bg-slate50 text-fg;
     overflow-x: hidden;
-    direction: ltr;
-    text-align: left;
+    direction: rtl;
+    text-align: right;
   }
   .card{
     @apply bg-card border border-border rounded-2xl shadow-soft;
   }
 }
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Yekan Bakh', 'Vazirmatn', system-ui, -apple-system, Segoe UI, Roboto, Arial;
   line-height: 1.5;
   font-weight: 400;
     height:100%;
     width:100%;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #0f1723;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -57,6 +82,9 @@ body {
   display: block;
   min-width: 320px;
   min-height: 100vh;
+  direction: rtl;
+  text-align: right;
+  font-family: 'Yekan Bakh', 'Vazirmatn', system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
 h1 {

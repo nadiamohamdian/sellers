@@ -1,37 +1,32 @@
 import React from "react";
-import { SignupStepper } from "../components/SignupStepper";
+import SignupStepper from "../components/SignupStepper/SignupStepper";
 
 const SignupStepperDemo: React.FC = () => {
   const steps = [
     { 
-      icon: "/img/placeholder-user.svg", 
+      icon: "/icons/PROfile.svg", 
       label: "پروفایل", 
       status: "next" as const
     },
     { 
-      icon: "/img/placeholder-mail.svg", 
+      icon: "/icons/Vector (1).svg", 
       label: "تایید ایمیل", 
       status: "current" as const, 
       accent: "brand" 
     },
     { 
-      icon: "/img/placeholder-contract.svg", 
+      icon: "/icons/Group.svg", 
       label: "ارسال قرارداد", 
       status: "next" as const 
     },
     { 
-      icon: "/img/placeholder-bank.svg", 
+      icon: "/icons/Vector (2).svg", 
       label: "ثبت شماره حساب", 
       status: "next" as const 
     },
     { 
-      icon: "/img/placeholder-docs.svg", 
+      icon: "/icons/Vector (3).svg", 
       label: "ارسال مدارک", 
-      status: "next" as const 
-    },
-    { 
-      icon: "/img/placeholder-play.svg", 
-      label: "آموزش", 
       status: "next" as const 
     }
   ];
