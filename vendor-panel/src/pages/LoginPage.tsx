@@ -105,10 +105,11 @@ export default function LoginPage() {
                     {/* تیتر */}
                     <div
                         style={{
-                            color: "#2D2D2D",
-                            fontSize: "24px",
-                            fontWeight: "700",
-                            marginBottom: "16px",
+                            color: "#606060",
+                            fontSize: "28px",
+                            fontWeight: 700,
+                            marginBottom: "20px",
+                            margin: "0 auto",
                             textAlign: "center",
                         }}
                     >
@@ -122,7 +123,7 @@ export default function LoginPage() {
                             fontSize: "16px",
                             fontWeight: "400",
                             lineHeight: "1.6",
-                            marginBottom: "32px",
+                            marginBottom: "40px",
                             textAlign: "center",
                         }}
                     >
@@ -189,8 +190,8 @@ export default function LoginPage() {
                         style={{
                             color: "#6B6B6B",
                             fontSize: "16px",
-                            fontWeight: "500",
-                            marginBottom: "12px",
+                            fontWeight: 400,
+                            marginBottom: "10px",
                             textAlign: "center",
                         }}
                     >
@@ -334,26 +335,17 @@ export default function LoginPage() {
                         padding: "60px 40px",
                     }}
                 >
-                    {/* لوگو */}
-                    <div
+                    {/* لوگوی نواری */}
+                    <img
+                        src="/icons/Group 45650.svg"
+                        alt="brand stripe"
                         style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            marginBottom: "40px",
+                            width: "260px",
+                            height: "auto",
+                            objectFit: "contain",
+                            marginBottom: "20px",
                         }}
-                    >
-                        <img
-                            src="/icons/Group 45650.svg"
-                            alt="stavita logo"
-                            style={{
-                                width: "200px",
-                                height: "auto",
-                                objectFit: "contain",
-                                marginBottom: "8px",
-                            }}
-                        />
-                    </div>
+                    />
 
                     {/* تصویر 3D */}
                     <img

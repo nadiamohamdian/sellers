@@ -1,22 +1,22 @@
-/* Dark Mode Enhancements */
-/* Global Dark Mode Variables */
+/* Light Mode Enhancements - Updated from Dark Mode */
+/* Global Light Mode Variables */
 [data-theme="dark"] {
   /* Enhanced contrast for better readability */
-  --text-base: #E5E7EB;
-  --text-muted: #9CA3AF;
-  --text-inverse: #0B0F14;
+  --text-base: #1F2937;
+  --text-muted: #6B7280;
+  --text-inverse: #FFFFFF;
   
-  /* Improved background hierarchy */
-  --bg-base: #0B0F14;
-  --bg-elev: #111827;
-  --bg-soft: #0F1620;
+  /* Light background hierarchy */
+  --bg-base: #FFFFFF;
+  --bg-elev: #F6F7FB;
+  --bg-soft: #F9FAFB;
   
   /* Enhanced borders */
-  --border: #1F2937;
+  --border: #E6E8EE;
   
   /* Brand colors with better contrast */
-  --brand: #3B82F6;
-  --brand-glow: #0EA5E9;
+  --brand: #1677FF;
+  --brand-glow: #1677FF;
   
   /* Success and danger colors */
   --success: #10B981;

@@ -1,10 +1,18 @@
-/* Send Documents Page Styles - Exact Match with Image */
+/* Global RTL & Typography */
+html, body, #root {
+  direction: rtl;
+}
 
+h1, h2, h3, .card-title, .form-label {
+  text-align: right;
+}
+
+/* Send Documents Page Styles - Exact Match with Image */
 .sd-layout {
   direction: rtl;
   min-height: 100vh;
   background: #ffffff;
-  font-family: var(--font-family);
+  font-family: 'IRANSansX', 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
   padding: 0;
   margin: 0;
   display: flex;
@@ -24,12 +32,13 @@
   border-left: 1px solid #E5E7EB;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: #f6f7fb;
+  direction: rtl;
 }
 
 .sd-sidebar__header {
   padding: 20px;
-  background: #ffffff;
+  background: #f6f7fb;
   border-bottom: 1px solid #E5E7EB;
   display: flex;
   flex-direction: column;
@@ -117,59 +126,61 @@
 .sd-sidebar__item {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
-  padding: 12px 20px;
+  padding: 10px 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-right: 3px solid transparent;
-  flex-direction: row-reverse;
+  border-radius: 12px;
 }
 
-.sd-sidebar__item:hover {
-  background: #F8F9FA;
-  border-left-color: #0560FD;
-  border-right: 3px solid transparent;
-  border-left: 3px solid #0560FD;
-}
-
-.sd-sidebar__item--active {
-  background: #0560FD;
-  border-left-color: #0560FD;
-  color: white;
-  border-radius: 8px;
-  margin: 0 12px;
-  border-right: 3px solid transparent;
-  border-left: 3px solid #0560FD;
-}
-
-.sd-sidebar__icon {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sd-sidebar__item--active .sd-sidebar__icon {
-  filter: brightness(0) invert(1);
+.sd-sidebar__item img {
+  order: 1;
+  width: 18px;
+  height: 18px;
 }
 
 .sd-sidebar__text {
+  order: 2;
+  text-align: right;
+  flex: 1;
   font-size: 14px;
   font-weight: 500;
-  flex: 1;
-  text-align: right;
 }
+
+.sd-sidebar__item:hover:not(.sd-sidebar__item--active) {
+  background: #F3F6FA;
+  color: #3A4451;
+}
+
+.sd-sidebar__item--active {
+  background: #1677FF;
+  color: #fff;
+}
+
+.sd-sidebar__item--active img {
+  filter: brightness(0) invert(1);
+}
+
+.sd-sidebar__item:not(.sd-sidebar__item--active) {
+  color: #6B7280;
+}
+
+.sd-sidebar__item:not(.sd-sidebar__item--active) img {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(6%) saturate(692%) hue-rotate(176deg) brightness(96%) contrast(89%);
+}
+
 
 .sd-sidebar__dashboard-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: #0560FD;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #1677FF;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -209,60 +220,53 @@
 .sd-stepper {
   width: 100%;
   position: relative;
-  border-radius: 20px;
-  background-color: #ffffff;
-  height: 216px;
-  padding: 20px;
+  border-radius: 16px;
+  background-color: #f6f7fb;
+  padding: 24px 28px;
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   direction: rtl;
-  border: 1px solid #E5E7EB;
+  flex-direction: row;
 }
 
 .sd-stepper__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 2;
-  flex: 1;
+  gap: 8px;
 }
 
 .sd-stepper__line {
-  flex: 1;
-  height: 1px;
-  background: #606060;
-  z-index: 1;
-  margin: 0 16px;
+  flex: 1 1 auto;
+  height: 2px;
+  background: #D7DBE5;
+  transform: translateY(16px);
 }
 
 .sd-stepper__icon {
-  width: 55px !important;
-  height: 55px !important;
-  position: relative;
-  border-radius: 10px;
-  background-color: #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background-color: #f6f7fb;
+  border: 1px solid #E6E8EE;
 }
 
 .sd-stepper__icon img {
-  width: 100%;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  height: 15.2px;
-  filter: grayscale(100%);
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(49%) sepia(6%) saturate(692%) hue-rotate(176deg) brightness(96%) contrast(89%);
 }
 
 .sd-stepper__item--active .sd-stepper__icon {
-  background-color: #0560fd;
-  box-shadow: 0px 0px 10px #0560fd;
+  background-color: #1677FF;
+  border: none;
+  color: #fff;
 }
 
 .sd-stepper__item--active .sd-stepper__icon img {
@@ -270,132 +274,51 @@
 }
 
 .sd-stepper__item--done .sd-stepper__icon {
-  background-color: #10b981;
-  box-shadow: 0px 0px 10px #10b981;
-}
-
-/* Profile icon should be green */
-.sd-stepper__item:first-child .sd-stepper__icon {
-  background-color: #10b981 !important;
-  box-shadow: 0px 0px 10px #10b981 !important;
-}
-
-.sd-stepper__item:first-child .sd-stepper__icon img {
-  filter: brightness(0) invert(1) !important;
-}
-
-.sd-stepper__item:first-child .sd-stepper__dot {
-  background: #10b981 !important;
+  background-color: #16A34A;
+  border: none;
+  color: #fff;
 }
 
 .sd-stepper__item--done .sd-stepper__icon img {
   filter: brightness(0) invert(1);
 }
 
-.sd-stepper__item--future .sd-stepper__icon {
-  background-color: #e5e7eb;
-  box-shadow: 0px 0px 10px #9ca3af;
-}
-
-.sd-stepper__item--future .sd-stepper__icon img {
-  filter: grayscale(100%);
-}
 
 .sd-stepper__dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background: #9ca3af;
-  margin-bottom: 8px;
+  border-radius: 999px;
+  background: #D0D5DD;
 }
 
 .sd-stepper__item--active .sd-stepper__dot {
-  background: #0560FD;
+  background: #1677FF;
+  box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.12);
 }
 
 .sd-stepper__item--done .sd-stepper__dot {
-  background: #10b981;
+  background: #16A34A;
 }
 
-.sd-stepper__item--future .sd-stepper__dot {
-  background: #9ca3af;
-}
 
 .sd-stepper__label {
-  width: 100px;
-  position: relative;
-  font-size: 16px;
-  line-height: 32.25px;
-  font-weight: 500;
-  font-family: 'Yekan Bakh';
-  color: #606060;
+  font-size: 12px;
+  color: #7D868F;
   text-align: center;
-  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .sd-stepper__item--active .sd-stepper__label {
-  color: #606060;
-  font-weight: 500;
+  color: #111827;
+  font-weight: 600;
 }
 
 .sd-stepper__item--done .sd-stepper__label {
-  color: #606060;
-  font-weight: 500;
+  color: #111827;
+  font-weight: 600;
 }
 
-.sd-stepper__item--done .sd-stepper__icon {
-  background-color: #01b075;
-}
-
-.sd-stepper__item--done .sd-stepper__dot {
-  background: #01B075;
-}
-
-.sd-stepper__line--green {
-  background: #10b981;
-}
-
-.sd-stepper__line {
-  width: 100%;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  height: 1px;
-  background: #606060;
-  z-index: 1;
-  margin: 0 16px;
-}
-
-.sd-stepper__line--green {
-  background: #10b981;
-}
-
-/* First step should be gray, not green */
-.sd-stepper__item:first-child .sd-stepper__icon {
-  background-color: #ecf0ff;
-}
-
-.sd-stepper__item:first-child .sd-stepper__icon img {
-  filter: grayscale(100%);
-}
-
-.sd-stepper__item:first-child .sd-stepper__dot {
-  background: #606060;
-}
-
-/* Pending steps styling */
-.sd-stepper__item:not(.sd-stepper__item--active):not(.sd-stepper__item--done) .sd-stepper__icon {
-  background-color: #ecf0ff;
-}
-
-.sd-stepper__item:not(.sd-stepper__item--active):not(.sd-stepper__item--done) .sd-stepper__icon img {
-  filter: grayscale(100%);
-}
-
-.sd-stepper__item:not(.sd-stepper__item--active):not(.sd-stepper__item--done) .sd-stepper__dot {
-  background: #606060;
-}
 
 /* Grid Layout */
 .sd-grid {
@@ -407,7 +330,7 @@
 
 /* Uploads Card */
 .sd-uploads-card {
-  background: #ffffff;
+  background: #f6f7fb;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -436,7 +359,7 @@
 }
 
 .sd-upload-area {
-  background: #ffffff;
+  background: #f6f7fb;
   border: 2px dashed #E5E7EB;
   border-radius: 12px;
   padding: 20px;
@@ -462,7 +385,7 @@
 
 /* Form Card */
 .sd-form-card {
-  background: #ffffff;
+  background: #f6f7fb;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -544,7 +467,7 @@
   border-radius: 10px;
   font-size: 14px;
   color: #0F1723;
-  background: #ffffff;
+  background: #f6f7fb;
   transition: all 0.3s ease;
   text-align: right;
 }
@@ -563,7 +486,7 @@
   border-radius: 10px;
   font-size: 14px;
   color: #0F1723;
-  background: #ffffff;
+  background: #f6f7fb;
   transition: all 0.3s ease;
   appearance: none;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
@@ -581,7 +504,7 @@
 
 /* Note Section */
 .sd-note-section {
-  background: #ffffff;
+  background: #f6f7fb;
   border-radius: 12px;
   padding: 20px;
   border: 1px solid #E5E7EB;
@@ -697,9 +620,7 @@
     gap: 12px;
   }
 
-  .sd-stepper__item {
-    flex-basis: auto;
-  }
+  /* .sd-stepper__item - REMOVED: conflicts with new layout system */
 
   .sd-stepper__line {
     display: none;

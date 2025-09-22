@@ -137,29 +137,28 @@ const EmailVerifyPage: React.FC = () => {
           <div className="bg-white rounded-2xl p-6 mb-8 shadow-[0_1px_10px_rgba(0,0,0,0.05)]">
             <div className="flex items-center justify-between relative">
               {[
-                { name: 'آموزش', icon: '📚' },
-                { name: 'ارسال مدارک', icon: '📄' },
-                { name: 'ثبت شماره حساب', icon: '💳' },
-                { name: 'ارسال قرارداد', icon: '📋' },
+                { name: 'پروفایل', icon: '👤', completed: true },
                 { name: 'تایید ایمیل', icon: '✉️', active: true },
-                { name: 'پروفایل', icon: '👤' }
+                { name: 'ارسال قرارداد', icon: '📋' },
+                { name: 'ثبت شماره حساب', icon: '💳' },
+                { name: 'ارسال مدارک', icon: '📄' }
               ].map((step, index) => (
                 <div key={index} className="flex flex-col items-center relative z-10">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm mb-2 ${
                     step.active 
                       ? 'bg-blue-600 text-white border-2 border-blue-600' 
-                      : index < 4 
+                      : step.completed
                         ? 'bg-green-500 text-white border-2 border-green-500' 
                         : 'bg-gray-200 text-gray-500 border-2 border-gray-200'
                   }`}>
-                    {step.active || index < 4 ? '✓' : step.icon}
+                    {step.active || step.completed ? '✓' : step.icon}
                   </div>
                   <span className={`text-xs text-center ${
                     step.active ? 'text-blue-600 font-bold' : 'text-gray-500'
                   }`}>
                     {step.name}
                   </span>
-                  {index < 4 && (
+                  {step.completed && (
                     <div className="absolute top-4 right-4 w-2 h-2 bg-green-500 rounded-full"></div>
                   )}
                 </div>
@@ -167,7 +166,7 @@ const EmailVerifyPage: React.FC = () => {
               
               {/* Progress Line */}
               <div className="absolute top-4 right-4 w-[calc(100%-2rem)] h-0.5 bg-gray-200">
-                <div className="h-full bg-green-500 w-4/5"></div>
+                <div className="h-full bg-green-500 w-1/5"></div>
                 <div className="absolute top-1/2 right-0 w-2 h-2 bg-green-500 rounded-full transform -translate-y-1/2"></div>
               </div>
             </div>

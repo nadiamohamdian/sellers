@@ -1,135 +1,203 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/sidebar/Sidebar';
+import React from 'react';
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
+} from "recharts";
+import SellerShell from '../layouts/SellerShell';
+import './Dashboard.css';
 
 export default function Dashboard() {
-  const [activePage, setActivePage] = useState('dashboard');
 
-  const handlePageChange = (page: string) => {
-    setActivePage(page);
-    console.log('Navigating to:', page);
-  };
+  // Chart data for sales trend - matching reference exactly
+  const chartData = [
+    { label: '1/15', value: 1.2, count: 0.8 },
+    { label: '1/17', value: 1.8, count: 1.2 },
+    { label: '1/19', value: 2.1, count: 1.5 },
+    { label: '1/21', value: 1.5, count: 1.0 },
+    { label: '1/23', value: 2.3, count: 1.7 },
+    { label: '1/25', value: 1.9, count: 1.3 },
+    { label: '1/27', value: 2.5, count: 1.8 },
+    { label: '1/29', value: 2.8, count: 2.0 },
+    { label: '1/31', value: 3.1, count: 2.2 },
+    { label: '2/2', value: 2.7, count: 1.9 },
+    { label: '2/4', value: 3.2, count: 2.3 },
+    { label: '2/6', value: 2.9, count: 2.1 },
+    { label: '2/8', value: 3.5, count: 2.6 },
+    { label: '2/10', value: 3.8, count: 2.8 },
+    { label: '2/12', value: 3.6, count: 2.7 },
+    { label: '2/14', value: 4.0, count: 3.0 },
+    { label: '2/16', value: 3.7, count: 2.8 },
+    { label: '2/18', value: 3.9, count: 2.9 },
+    { label: '2/20', value: 4.2, count: 3.1 },
+    { label: '2/22', value: 3.8, count: 2.9 },
+    { label: '2/24', value: 4.1, count: 3.0 },
+    { label: '2/26', value: 3.9, count: 2.9 },
+    { label: '2/28', value: 4.3, count: 3.2 },
+    { label: '3/2', value: 4.0, count: 3.0 },
+    { label: '3/4', value: 4.2, count: 3.1 },
+    { label: '3/6', value: 3.8, count: 2.9 },
+    { label: '3/8', value: 4.1, count: 3.0 },
+    { label: '3/10', value: 3.9, count: 2.9 },
+    { label: '3/12', value: 4.3, count: 3.2 },
+    { label: '3/14', value: 4.0, count: 3.0 },
+    { label: '3/16', value: 4.2, count: 3.1 }
+  ];
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Sidebar */}
-      <Sidebar activePage={activePage} onPageChange={handlePageChange} />
-      
-      {/* Main Content */}
-      <div className="flex-1 mr-80 p-8 overflow-y-auto">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">داشبورد</h1>
+    <SellerShell title="داشبورد">
           
-          {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-base font-semibold text-gray-800">درآمد نا خالص</h3>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-xs flex items-center gap-1 hover:bg-blue-600 transition-colors">
-                  جزئیات
-                  <span className="text-xs">←</span>
-                </button>
-              </div>
-              <div className="text-2xl font-bold text-gray-800 mb-2">۱۲۰,۵۸۶,۰۰۰ ریال</div>
-              <div className="text-sm font-medium text-green-600">+ ۳۰% نسبت به بازه قبل</div>
+          {/* Top Row - 2 Summary Cards */}
+          <section className="top-row">
+            {/* Card 1: فروخته شده */}
+            <div className="card" id="sold">
+              <button className="pill">جزئیات ←</button>
+              <div className="title">فروخته شده</div>
+              <div className="value-large">۲۰ کالا</div>
+              <div className="delta">+ ۳۰٪ نسبت به بازه قبل</div>
             </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-base font-semibold text-gray-800">فروخته شده</h3>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-xs flex items-center gap-1 hover:bg-blue-600 transition-colors">
-                  جزئیات
-                  <span className="text-xs">←</span>
-                </button>
-              </div>
-              <div className="text-2xl font-bold text-gray-800 mb-2">۲۰ کالا</div>
-              <div className="text-sm font-medium text-green-600">+ ۳۰% نسبت به بازه قبل</div>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-base font-semibold text-gray-800">سفارش و تعهد ارسال</h3>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-xs flex items-center gap-1 hover:bg-blue-600 transition-colors">
-                  جزئیات
-                  <span className="text-xs">←</span>
-                </button>
-              </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex items-center text-sm">
-                  <span className="text-blue-500 ml-2">←</span>
-                  <span>تعهد ارسال گذشته و امروز: 10</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <span className="text-blue-500 ml-2">←</span>
-                  <span>تعهد ارسال فردا به بعد: 7</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <span className="text-blue-500 ml-2">←</span>
-                  <span>سفارش های امروز: 5</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <span className="text-blue-500 ml-2">←</span>
-                  <span>سفارشهای لغو شده: 6</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Orders Table */}
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 mb-8">
-            <div className="flex justify-between items-center mb-5 pb-4 border-b-2 border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-800">آخرین سفارشات</h2>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm flex items-center gap-1 hover:bg-blue-600 transition-colors">
-                جزئیات
-                <span className="text-xs">←</span>
-              </button>
+            {/* Card 2: درآمد ناخالص */}
+            <div className="card" id="gross">
+              <button className="pill">جزئیات ←</button>
+              <div className="title">درآمد ناخالص</div>
+              <div className="value-large">۱۲۰,۵۸۶,۰۰۰</div>
+              <div className="currency-inline">ریال</div>
+              <div className="delta">+ ۳۰٪ نسبت به بازه قبل</div>
             </div>
-            
-            <div className="overflow-x-auto">
-              <div className="grid grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg mb-3 font-semibold text-gray-600 text-sm">
-                <div>کد سفارش</div>
-                <div>مبلغ</div>
-                <div>تاریخ</div>
-                <div>ساعت</div>
-                <div></div>
+          </section>
+
+          {/* Bottom Row - 2 Cards */}
+          <section className="bottom-row">
+            {/* Card 1: آخرین سفارشات (Table) */}
+            <div className="card" id="orders-table">
+              <button className="pill">جزئیات ←</button>
+              <div className="title">آخرین سفارشات</div>
+              
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>تاریخ</th>
+                    <th>ساعت</th>
+                    <th>کد سفارش</th>
+                    <th>مبلغ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span className="table-arrow">←</span></td>
+                    <td>1403/02/10</td>
+                    <td>21:45</td>
+                    <td>1</td>
+                    <td>5,198,265 ریال</td>
+                  </tr>
+                  <tr>
+                    <td><span className="table-arrow">←</span></td>
+                    <td>1403/02/10</td>
+                    <td>21:45</td>
+                    <td>1</td>
+                    <td>6,195,258 ریال</td>
+                  </tr>
+                  <tr>
+                    <td><span className="table-arrow">←</span></td>
+                    <td>1403/02/10</td>
+                    <td>21:45</td>
+                    <td>1</td>
+                    <td>5,198,365 ریال</td>
+                  </tr>
+                  <tr>
+                    <td><span className="table-arrow">←</span></td>
+                    <td>1403/02/10</td>
+                    <td>21:45</td>
+                    <td>1</td>
+                    <td>6,195,258 ریال</td>
+                  </tr>
+                  <tr>
+                    <td><span className="table-arrow">←</span></td>
+                    <td>1403/02/10</td>
+                    <td>21:45</td>
+                    <td>1</td>
+                    <td>5,198,365 ریال</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Card 2: سفارش و تعهد ارسال (KPIs) */}
+            <div className="card" id="ship-commit-kpis">
+              <div className="title">سفارش و تعهد ارسال</div>
+              <div className="kpis">
+                <div className="kpi">
+                  <span className="kpi-label">تعهد ارسال گذشته و امروز</span>
+                  <span className="kpi-number">10</span>
+                </div>
+                <div className="kpi">
+                  <span className="kpi-label">تعهد ارسال فردا به بعد</span>
+                  <span className="kpi-number">7</span>
+                </div>
+                <div className="kpi">
+                  <span className="kpi-label">سفارش های امروز</span>
+                  <span className="kpi-number">5</span>
+                </div>
+                <div className="kpi">
+                  <span className="kpi-label">سفارشهای لغو شده</span>
+                  <span className="kpi-number">6</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Chart Row - Sales Chart */}
+          <section className="chart-section">
+            <div className="card chart-card" id="sales-chart">
+              <div className="chart-header">
+                <div className="title">روند فروش شما</div>
               </div>
               
-              {[
-                { id: '25482', amount: '5,198,265 ریال', date: '1403/02/10', time: '21:45' },
-                { id: '25481', amount: '6,195,258 ریال', date: '1403/02/10', time: '21:45' },
-                { id: '25480', amount: '5,198,365 ریال', date: '1403/02/10', time: '21:45' },
-                { id: '25479', amount: '6,195,258 ریال', date: '1403/02/10', time: '21:45' },
-                { id: '25478', amount: '5,198,365 ریال', date: '1403/02/10', time: '21:45' },
-              ].map((order) => (
-                <div 
-                  key={order.id}
-                  className="grid grid-cols-5 gap-4 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer"
-                >
-                  <div className="text-sm text-gray-800">{order.id}</div>
-                  <div className="text-sm text-gray-800">{order.amount}</div>
-                  <div className="text-sm text-gray-800">{order.date}</div>
-                  <div className="text-sm text-gray-800">{order.time}</div>
-                  <div className="text-blue-500 text-xs">←</div>
+              <div className="chart-container">
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={chartData} margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
+                    <CartesianGrid stroke="#EEF1F5" vertical={false} />
+                    <XAxis 
+                      dataKey="label" 
+                      axisLine={false} 
+                      tickLine={false} 
+                      tick={{ fontSize: 12, fill: "#6B7280" }} 
+                    />
+                    <YAxis 
+                      axisLine={false} 
+                      tickLine={false} 
+                      tick={{ fontSize: 12, fill: "#6B7280" }}
+                      domain={[0, 4]}
+                    />
+                    <Tooltip wrapperStyle={{ direction: "rtl" }} />
+                    <Legend 
+                      verticalAlign="bottom" 
+                      align="right" 
+                      iconType="circle" 
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#1677FF" 
+                      strokeWidth={2.5} 
+                      dot={{ r: 3 }} 
+                      activeDot={{ r: 5 }}
+                      name="درآمد ناخالص (ریال)"
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="count" 
+                      stroke="#87CEEB" 
+                      strokeWidth={2.5} 
+                      dot={{ r: 3 }} 
+                      activeDot={{ r: 5 }}
+                      name="تعداد فروش شما"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
                 </div>
-              ))}
             </div>
-          </div>
-
-          {/* Sales Chart Placeholder */}
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-            <div className="flex justify-between items-center mb-5 pb-4 border-b-2 border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-800">روند فروش شما</h2>
-              <button className="text-blue-500 text-sm flex items-center gap-1 hover:text-blue-700 transition-colors">
-                گزارش فروش
-                <span className="text-xs">←</span>
-              </button>
-            </div>
-            
-            <div className="h-96 bg-gray-50 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">نمودار فروش در اینجا نمایش داده می‌شود</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </section>
+    </SellerShell>
   );
 }

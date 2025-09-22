@@ -1,0 +1,451 @@
+/* src/pages/OwnerInfoPage.css */
+
+/* ===================================
+   A) PAGE LAYOUT (sidebar on RIGHT)
+   =================================== */
+
+.owner-info-page {
+  direction: rtl;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 24px;
+}
+
+.oi-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* RIGHT: 320px sidebar | LEFT: main */
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Place sidebar in the RIGHT column and main in the LEFT column (RTL page) */
+.oi-sidebar {
+  grid-column: 1;
+}
+
+.oi-main {
+  grid-column: 2;
+}
+
+@media (max-width: 1024px) {
+  .oi-grid {
+    grid-template-columns: 1fr;
+  }
+  .oi-sidebar,
+  .oi-main {
+    grid-column: auto;
+  }
+}
+
+/* ====================================
+   B) SIDEBAR VISUALS (match previous)
+   ==================================== */
+
+.oi-sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Back button */
+.sb-back-button {
+  margin-bottom: 8px;
+}
+
+.sb-back-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  color: #3a4451;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sb-back-btn:hover {
+  background: #f6f7fb;
+  transform: translateY(-1px);
+}
+
+/* Header card (seller name area) */
+.sb-header {
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.sb-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sb-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1677ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-seller-name {
+  text-align: right;
+  font-weight: 600;
+  color: #0b1324;
+  font-size: 14px;
+}
+
+.sb-header-cta {
+  background: #1677ff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Navigation menu */
+.sb-nav {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sb-section-title {
+  margin: 14px 8px 8px;
+  color: #98a1ae;
+  font-size: 12px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.sb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sb-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end; /* pack to RIGHT */
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.sb-item .sb-ic {
+  order: 1;
+  font-size: 18px;
+  color: #7d868f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-item .sb-lb {
+  order: 2;
+  flex: 1 1 auto;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sb-item:hover:not(.active) {
+  background: #f3f6fa;
+  color: #3a4451;
+}
+
+.sb-item:hover:not(.active) .sb-ic {
+  color: #3a4451;
+}
+
+.sb-item.active {
+  background: #1677ff;
+  color: #fff;
+}
+
+.sb-item.active .sb-ic {
+  color: #fff;
+}
+
+/* Rating/Score section */
+.sb-rating {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sb-rating-title {
+  color: #0b1324;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.sb-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.sb-star-count {
+  margin-right: auto;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sb-satisfaction {
+  margin-bottom: 16px;
+}
+
+.sb-satisfaction-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.sb-progress-bar {
+  height: 6px;
+  background: #e6e8ee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.sb-progress-fill {
+  height: 100%;
+  background: #1677ff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.sb-satisfaction-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sb-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.sb-metric {
+  background: #f6f7fb;
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.sb-metric-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1324;
+  margin-bottom: 4px;
+}
+
+.sb-metric-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ===================================================
+   C) TEXT ALIGNMENTS & TITLES (fix remaining diffs)
+   =================================================== */
+
+h1,
+h2,
+h3,
+.card-title,
+.form-label,
+.list-title {
+  text-align: right;
+}
+
+.oi-main .oi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .oi-main .oi-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main content card */
+.oi-content-card {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.oi-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e6e8ee;
+  padding-bottom: 16px;
+}
+
+.oi-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b1324;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.oi-description {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: right;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.oi-content {
+  /* Content area */
+}
+
+.oi-column {
+  /* Column styling */
+}
+
+.oi-field-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.oi-field-list > div {
+  border-bottom: 1px solid #e6e8ee;
+}
+
+.oi-field-list > div:last-child {
+  border-bottom: none;
+}
+
+/* =======================================
+   D) HARD OVERRIDES (kill conflicting CSS)
+   ======================================= */
+
+/* Remove legacy LTR / reverse rules that cause misplacement */
+.owner-info-page [dir="ltr"],
+.oi-sidebar.ltr,
+.oi-grid.ltr {
+  direction: rtl !important;
+}
+
+.sb-item {
+  flex-direction: row !important;
+}
+
+.sb-item .sb-lb {
+  text-align: right !important;
+}
+
+.sb-item .sb-ic {
+  margin: 0 !important;
+}
+
+.sb-item .left,
+.sb-item .right {
+  float: none !important;
+}
+
+.sb-item {
+  display: flex !important;
+} /* force flex over any grid */
+
+/* Ensure no global `row-reverse` on layout */
+.oi-grid {
+  flex-direction: row !important;
+}
+
+/* Force RTL for all text elements */
+.owner-info-page * {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Override any LTR positioning */
+.oi-sidebar {
+  order: 1 !important;
+}
+
+.oi-main {
+  order: 2 !important;
+}
+
+/* Ensure proper icon and label positioning */
+.sb-item .sb-ic {
+  order: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sb-item .sb-lb {
+  order: 2 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Override any global flex-reverse */
+.sb-item,
+.sb-list,
+.sb-nav {
+  flex-direction: row !important;
+}
+
+.sb-list {
+  flex-direction: column !important;
+}
+
+.sb-item {
+  flex-direction: row !important;
+}
+
+/* Ensure proper grid column placement */
+@media (min-width: 1025px) {
+  .oi-sidebar {
+    grid-column: 1 !important;
+  }
+  
+  .oi-main {
+    grid-column: 2 !important;
+  }
+}

@@ -1,12 +1,22 @@
 /* Bank Account Page Styles - Exact Match with Image */
+
+/* Global RTL & Typography */
+html, body, #root {
+  direction: rtl;
+}
+
+h1, h2, h3, .card-title, .form-label {
+  text-align: right;
+}
+
 /* Layout */
 .ba-layout {
   display: flex;
   min-height: 100vh;
   background: #ffffff;
-  font-family: 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
-  direction: ltr;
-  text-align: left;
+  font-family: 'IRANSansX', 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
 }
 
 /* Sidebar */
@@ -21,6 +31,7 @@
   top: 0;
   height: 100vh;
   z-index: 100;
+  direction: rtl;
 }
 
 .ba-sidebar--blurred {
@@ -105,39 +116,49 @@
 .ba-sidebar__item {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
-  padding: 12px 20px;
+  padding: 10px 12px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  color: #6B7280;
+  margin: 0 12px;
 }
 
 .ba-sidebar__item:hover {
-  background: #F9FAFB;
+  background: #F3F6FA;
+  color: #3A4451;
 }
 
 .ba-sidebar__item--active {
-  background: #0560FD;
-  color: white;
-}
-
-.ba-sidebar__item--active .ba-sidebar__text {
-  color: white;
+  background: #1677FF;
+  color: #fff;
+  border-radius: 12px;
 }
 
 .ba-sidebar__icon {
   width: 20px;
   height: 20px;
-  filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 1;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .ba-sidebar__item--active .ba-sidebar__icon {
   filter: brightness(0) invert(1);
+  color: #fff;
 }
 
 .ba-sidebar__text {
   font-size: 14px;
   font-weight: 500;
-  color: #374151;
+  order: 2;
+  text-align: right;
+  flex: 1;
 }
 
 /* Main Content */
@@ -159,47 +180,42 @@
 .ba-stepper {
   width: 100%;
   position: relative;
-  border-radius: 20px;
-  background-color: #ffffff;
-  height: 216px;
-  padding: 20px;
+  border-radius: 16px;
+  background-color: #f6f7fb;
+  padding: 24px 28px;
   margin-bottom: 24px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   direction: rtl;
-  border: 1px solid #E5E7EB;
 }
 
 .ba-stepper__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 2;
-  flex: 1;
+  gap: 8px;
 }
 
 .ba-stepper__line {
-  flex: 1;
-  height: 1px;
-  background: #606060;
-  z-index: 1;
-  margin: 0 16px;
+  flex: 1 1 auto;
+  height: 2px;
+  background: #D7DBE5;
+  transform: translateY(16px);
 }
 
 .ba-stepper__icon {
-  width: 55px !important;
-  height: 55px !important;
-  position: relative;
-  border-radius: 10px;
-  background-color: #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  box-shadow: 0px 0px 10px #9ca3af;
-  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #f6f7fb;
+  border: 1px solid #E6E8EE;
+  color: #7D868F;
 }
 
 .ba-stepper__icon img {
@@ -212,10 +228,9 @@
 }
 
 .ba-stepper__item--active .ba-stepper__icon {
-  width: 55px !important;
-  height: 55px !important;
-  background-color: #0560fd;
-  box-shadow: 0px 0px 10px #0560fd;
+  background-color: #1677FF;
+  border: none;
+  color: #fff;
 }
 
 .ba-stepper__item--active .ba-stepper__icon img {
@@ -223,67 +238,61 @@
 }
 
 .ba-stepper__item--done .ba-stepper__icon {
-  width: 55px !important;
-  height: 55px !important;
-  background-color: #10b981;
-  box-shadow: 0px 0px 10px #10b981;
+  background-color: #16A34A;
+  border: none;
+  color: #fff;
 }
 
 .ba-stepper__item--done .ba-stepper__icon img {
   filter: brightness(0) invert(1);
 }
 
-.ba-stepper__item--future .ba-stepper__icon {
-  width: 55px !important;
-  height: 55px !important;
-  background-color: #f3f4f6;
-  box-shadow: 0px 0px 10px #d1d5db;
+.ba-stepper__item:not(.ba-stepper__item--active):not(.ba-stepper__item--done) .ba-stepper__icon {
+  background-color: #f6f7fb;
+  border: 1px solid #E6E8EE;
+  color: #7D868F;
 }
 
-.ba-stepper__item--future .ba-stepper__icon img {
-  filter: grayscale(100%);
+.ba-stepper__item:not(.ba-stepper__item--active):not(.ba-stepper__item--done) .ba-stepper__icon img {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(6%) saturate(692%) hue-rotate(176deg) brightness(96%) contrast(89%);
 }
 
 .ba-stepper__dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background: #606060;
-  margin-bottom: 8px;
+  border-radius: 999px;
+  background: #D0D5DD;
 }
 
 .ba-stepper__item--active .ba-stepper__dot {
-  background: #0560FD;
+  background: #1677FF;
+  box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.12);
 }
 
 .ba-stepper__item--done .ba-stepper__dot {
-  background: #10b981;
+  background: #16A34A;
 }
 
-.ba-stepper__item--future .ba-stepper__dot {
-  background: #9ca3af;
+.ba-stepper__item:not(.ba-stepper__item--active):not(.ba-stepper__item--done) .ba-stepper__dot {
+  background: #D0D5DD;
 }
 
 .ba-stepper__label {
-  width: 100px;
-  position: relative;
-  font-size: 16px;
-  line-height: 32.25px;
-  font-weight: 500;
-  font-family: 'Yekan Bakh';
-  color: #606060;
+  font-size: 12px;
+  color: #7D868F;
   text-align: center;
-  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .ba-stepper__item--active .ba-stepper__label {
-  color: #606060;
-  font-weight: 500;
+  color: #111827;
+  font-weight: 600;
 }
 
 .ba-stepper__item--done .ba-stepper__label {
-  color: #606060;
-  font-weight: 500;
+  color: #111827;
+  font-weight: 600;
 }
 
 .ba-stepper__line--green {
@@ -293,38 +302,107 @@
 /* Grid Layout */
 .ba-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr; /* FORM (right) : WARNING (left) */
   gap: 24px;
   align-items: start;
+  direction: rtl;
 }
 
-/* Notice Card */
-.ba-notice-card {
-  background: #ffffff;
-  border-radius: 20px;
+/* Swap columns for RTL: put FORM first in DOM but place it on the right */
+@media (min-width: 992px) {
+  .ba-form-card {
+    grid-column: 1 / 2; /* right side in RTL page */
+  }
+  .ba-warning-card {
+    grid-column: 2 / 3; /* left side */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ba-form-card,
+  .ba-warning-card {
+    grid-column: auto;
+  }
+}
+
+/* Card Base Styles */
+.ba-card {
+  background: #f6f7fb;
+  border: 1px solid #E6E8EE;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   padding: 24px;
-  height: fit-content;
 }
 
-.ba-notice-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0F1723;
+.ba-card .ba-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
   margin-bottom: 16px;
+  color: #111827;
 }
 
-.ba-notice-list {
-  list-style: none;
+/* Form Card */
+.ba-form-card {
+  background: #f6f7fb;
+  border: 1px solid #E6E8EE;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 24px;
+}
+
+/* Warning Card */
+.ba-warning-card {
+  background: #f6f7fb;
+  border: 1px solid #E6E8EE;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 24px;
+}
+
+.ba-warning-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.ba-warning-list {
+  margin: 0 0 12px 0;
   padding: 0;
-  margin: 0 0 20px 0;
+  list-style: none;
 }
 
-.ba-notice-list li {
-  font-size: 14px;
-  color: #606060;
-  margin-bottom: 12px;
-  padding-right: 16px;
+.ba-warning-list li {
   position: relative;
+  padding-right: 14px;  /* RTL bullet indent */
+  margin-bottom: 8px;
+  color: #3A4451;
+  font-size: 14px;
+}
+
+.ba-warning-list li::before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #1677FF;
+  line-height: 1;
+}
+
+.ba-warning-box {
+  background: #FDF2F2;
+  border: 1px solid #FBCACA;
+  color: #E11D48; /* red-600 */
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  text-align: right;
 }
 
 .ba-notice-list li::before {
@@ -404,7 +482,7 @@
   border-radius: 8px;
   font-size: 14px;
   color: #374151;
-  background: #ffffff;
+  background: #f6f7fb;
   transition: border-color 0.2s;
 }
 

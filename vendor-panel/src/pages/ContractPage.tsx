@@ -24,6 +24,7 @@ import "./ContractPage.css";
 
 const ContractPage: React.FC = () => {
   const navigate = useNavigate();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [contract1Accepted, setContract1Accepted] = useState(false);
   const [contract2Accepted, setContract2Accepted] = useState(false);
   const [signature1, setSignature1] = useState<File | null>(null);
@@ -57,104 +58,111 @@ const ContractPage: React.FC = () => {
 
   return (
     <div className="contract-layout">
-      {/* Sidebar */}
-      <aside className="contract-sidebar contract-sidebar--blurred">
-        <div className="contract-sidebar__header">
-          <div className="contract-sidebar__avatar">
-            <span className="icon"><User size={18} /></span>
-            <div className="contract-sidebar__badge">24</div>
+       {/* Sidebar */}
+      <aside className={`sp-sidebar sp-sidebar--blurred ${sidebarOpen ? 'sp-sidebar--open' : ''}`}>
+        <button 
+          className="sp-sidebar__close-btn"
+          onClick={() => setSidebarOpen(false)}
+        >
+          ×
+        </button>
+        <div className="sp-sidebar__header">
+          <div className="sp-sidebar__avatar">
+            <img src="/icons/Group 45650.svg" alt="User" className="sp-sidebar__avatar-icon" />
+            <div className="sp-sidebar__badge">24</div>
           </div>
-          <span className="contract-sidebar__name">نام فروشنده</span>
+          <span className="sp-sidebar__name">نام فروشنده</span>
         </div>
         
-        <nav className="contract-sidebar__nav">
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">کالا</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item contract-sidebar__item--active">
-                <span className="icon"><Home size={18} /></span>
-                <span className="contract-sidebar__text">پیشخوان</span>
+        <nav className="sp-sidebar__nav">
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">کالا</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item sp-sidebar__item--active">
+                <img src="/icons/Group 45698.svg" alt="Dashboard" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">پیشخوان</span>
               </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><Search size={18} /></span>
-                <span className="contract-sidebar__text">جستجو و ثبت کالا</span>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45699.svg" alt="Search" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">جستجو و ثبت کالا</span>
               </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><Package size={18} /></span>
-                <span className="contract-sidebar__text">مدیریت کالا و افزودن تنوع</span>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45700.svg" alt="Manage" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">مدیریت کالا و افزودن تنوع</span>
               </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><Tag size={18} /></span>
-                <span className="contract-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45701.svg" alt="Pricing" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
               </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><BarChart3 size={18} /></span>
-                <span className="contract-sidebar__text">گزارش موجودی کالا</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">سفارش‌ها</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item">
-                <span className="icon"><ClipboardList size={18} /></span>
-                <span className="contract-sidebar__text">مدیریت سفارشات جاری</span>
-              </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><Clock size={18} /></span>
-                <span className="contract-sidebar__text">تاریخچه سفارشات</span>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45702.svg" alt="Inventory" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">گزارش موجودی کالا</span>
               </li>
             </ul>
           </div>
 
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">مالی</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item">
-                <span className="icon"><Receipt size={18} /></span>
-                <span className="contract-sidebar__text">صورتحساب ها</span>
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">سفارش‌ها</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45703.svg" alt="Orders" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">مدیریت سفارشات جاری</span>
+              </li>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45704.svg" alt="History" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">تاریخچه سفارشات</span>
               </li>
             </ul>
           </div>
 
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">تحلیل عملکرد</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item">
-                <span className="icon"><TrendingUp size={18} /></span>
-                <span className="contract-sidebar__text">فروش و درآمد</span>
-              </li>
-              <li className="contract-sidebar__item">
-                <span className="icon"><RotateCcw size={18} /></span>
-                <span className="contract-sidebar__text">مرجوعی</span>
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">مالی</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45705.svg" alt="Invoices" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">صورتحساب ها</span>
               </li>
             </ul>
           </div>
 
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">راهنما</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item">
-                <span className="icon"><AlertTriangle size={18} /></span>
-                <span className="contract-sidebar__text">کالاهای غیر مجاز</span>
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">تحلیل عملکرد</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45707.svg" alt="Sales" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">فروش و درآمد</span>
+              </li>
+              <li className="sp-sidebar__item">
+                <img src="/icons/Group 45708.svg" alt="Returns" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">مرجوعی</span>
               </li>
             </ul>
           </div>
 
-          <div className="contract-sidebar__section">
-            <h3 className="contract-sidebar__section-title">پشتیبانی</h3>
-            <ul className="contract-sidebar__list">
-              <li className="contract-sidebar__item">
-                <span className="icon"><Headphones size={18} /></span>
-                <span className="contract-sidebar__text">درخواست پشتیبانی</span>
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">راهنما</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item">
+                <img src="/icons/Vector.svg" alt="Warning" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">کالاهای غیر مجاز</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="sp-sidebar__section">
+            <h3 className="sp-sidebar__section-title">پشتیبانی</h3>
+            <ul className="sp-sidebar__list">
+              <li className="sp-sidebar__item">
+                <img src="/icons/Layer_1.svg" alt="Support" className="sp-sidebar__icon" />
+                <span className="sp-sidebar__text">درخواست پشتیبانی</span>
               </li>
             </ul>
           </div>
         </nav>
       </aside>
 
-      {/* Main Content */}
+
+        {/* Main Content */}
       <main className="contract-main">
         {/* Content */}
         <div className="contract-content">
@@ -162,39 +170,39 @@ const ContractPage: React.FC = () => {
           <section className="contract-stepper">
             <div className="contract-stepper__item contract-stepper__item--done">
               <div className="contract-stepper__icon">
-                <span className="icon"><User size={18} /></span>
+                <img src="/icons/PROfile.svg" alt="Profile" />
               </div>
               <div className="contract-stepper__dot"></div>
               <span className="contract-stepper__label">پروفایل</span>
             </div>
-            <div className="contract-stepper__line contract-stepper__line--green"></div>
+            <div className="contract-stepper__line"></div>
             <div className="contract-stepper__item contract-stepper__item--done">
               <div className="contract-stepper__icon">
-                <span className="icon"><Mail size={18} /></span>
+                <img src="/icons/Vector (1).svg" alt="Email" />
               </div>
               <div className="contract-stepper__dot"></div>
               <span className="contract-stepper__label">تایید ایمیل</span>
             </div>
-            <div className="contract-stepper__line contract-stepper__line--green"></div>
+            <div className="contract-stepper__line"></div>
             <div className="contract-stepper__item contract-stepper__item--active">
               <div className="contract-stepper__icon">
-                <span className="icon"><FileText size={18} /></span>
+                <img src="/icons/Group.svg" alt="Contract" />
               </div>
               <div className="contract-stepper__dot"></div>
               <span className="contract-stepper__label">ارسال قرارداد</span>
             </div>
             <div className="contract-stepper__line"></div>
-            <div className="contract-stepper__item contract-stepper__item--future">
+            <div className="contract-stepper__item">
               <div className="contract-stepper__icon">
-                <span className="icon"><CreditCard size={18} /></span>
+                <img src="/icons/Vector (2).svg" alt="Bank" />
               </div>
               <div className="contract-stepper__dot"></div>
               <span className="contract-stepper__label">ثبت شماره حساب</span>
             </div>
             <div className="contract-stepper__line"></div>
-            <div className="contract-stepper__item contract-stepper__item--future">
+            <div className="contract-stepper__item">
               <div className="contract-stepper__icon">
-                <span className="icon"><Upload size={18} /></span>
+                <img src="/icons/Vector (3).svg" alt="Docs" />
               </div>
               <div className="contract-stepper__dot"></div>
               <span className="contract-stepper__label">ارسال مدارک</span>
@@ -257,7 +265,7 @@ const ContractPage: React.FC = () => {
                   </label>
                   
                   <div className="contract-buttons">
-                    <button type="submit" className="contract-btn contract-btn--primary">
+                    <button type="button" className="contract-btn contract-btn--primary" onClick={handleSubmit}>
                       <span className="contract-btn__icon">✓</span>
                       ثبت اطلاعات
                     </button>

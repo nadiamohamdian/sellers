@@ -55,8 +55,8 @@ const BankAccountPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Bank account submitted:", formData);
-    // Navigate to bank account page
-    navigate('/bank-account');
+    // Navigate to document submission page (next step)
+    navigate('/send-documents');
   };
 
   return (
@@ -65,7 +65,7 @@ const BankAccountPage: React.FC = () => {
       <aside className="ba-sidebar ba-sidebar--blurred">
         <div className="ba-sidebar__header">
           <div className="ba-sidebar__avatar">
-            <span className="icon"><User size={18} /></span>
+            <img src="/icons/Group 45650.svg" alt="User" className="ba-sidebar__avatar-icon" />
             <div className="ba-sidebar__badge">24</div>
           </div>
           <span className="ba-sidebar__name">نام فروشنده</span>
@@ -76,23 +76,23 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">کالا</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item ba-sidebar__item--active">
-                <span className="icon"><Home size={18} /></span>
+                <img src="/icons/Group 45698.svg" alt="Dashboard" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">پیشخوان</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><Search size={18} /></span>
+                <img src="/icons/Group 45699.svg" alt="Search" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">جستجو و ثبت کالا</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><Package size={18} /></span>
+                <img src="/icons/Group 45700.svg" alt="Manage" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">مدیریت کالا و افزودن تنوع</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><Tag size={18} /></span>
+                <img src="/icons/Group 45701.svg" alt="Pricing" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><BarChart3 size={18} /></span>
+                <img src="/icons/Group 45702.svg" alt="Inventory" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">گزارش موجودی کالا</span>
               </li>
             </ul>
@@ -102,11 +102,11 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">سفارش‌ها</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item">
-                <span className="icon"><ClipboardList size={18} /></span>
+                <img src="/icons/Group 45703.svg" alt="Orders" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">مدیریت سفارشات جاری</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><Clock size={18} /></span>
+                <img src="/icons/Group 45704.svg" alt="History" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">تاریخچه سفارشات</span>
               </li>
             </ul>
@@ -116,7 +116,7 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">مالی</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item">
-                <span className="icon"><Receipt size={18} /></span>
+                <img src="/icons/Group 45705.svg" alt="Invoices" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">صورتحساب ها</span>
               </li>
             </ul>
@@ -126,11 +126,11 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">تحلیل عملکرد</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item">
-                <span className="icon"><TrendingUp size={18} /></span>
+                <img src="/icons/Group 45707.svg" alt="Sales" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">فروش و درآمد</span>
               </li>
               <li className="ba-sidebar__item">
-                <span className="icon"><RotateCcw size={18} /></span>
+                <img src="/icons/Group 45708.svg" alt="Returns" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">مرجوعی</span>
               </li>
             </ul>
@@ -140,7 +140,7 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">راهنما</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item">
-                <span className="icon"><AlertTriangle size={18} /></span>
+                <img src="/icons/Vector.svg" alt="Warning" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">کالاهای غیر مجاز</span>
               </li>
             </ul>
@@ -150,7 +150,7 @@ const BankAccountPage: React.FC = () => {
             <h3 className="ba-sidebar__section-title">پشتیبانی</h3>
             <ul className="ba-sidebar__list">
               <li className="ba-sidebar__item">
-                <span className="icon"><Headphones size={18} /></span>
+                <img src="/icons/Layer_1.svg" alt="Support" className="ba-sidebar__icon" />
                 <span className="ba-sidebar__text">درخواست پشتیبانی</span>
               </li>
             </ul>
@@ -166,39 +166,39 @@ const BankAccountPage: React.FC = () => {
           <section className="ba-stepper">
             <div className="ba-stepper__item ba-stepper__item--done">
               <div className="ba-stepper__icon">
-                <span className="icon"><User size={18} /></span>
+                <img src="/icons/PROfile.svg" alt="Profile" />
               </div>
               <div className="ba-stepper__dot"></div>
               <span className="ba-stepper__label">پروفایل</span>
             </div>
-            <div className="ba-stepper__line ba-stepper__line--green"></div>
+            <div className="ba-stepper__line"></div>
             <div className="ba-stepper__item ba-stepper__item--done">
               <div className="ba-stepper__icon">
-                <span className="icon"><Mail size={18} /></span>
+                <img src="/icons/Vector (1).svg" alt="Email" />
               </div>
               <div className="ba-stepper__dot"></div>
               <span className="ba-stepper__label">تایید ایمیل</span>
             </div>
-            <div className="ba-stepper__line ba-stepper__line--green"></div>
+            <div className="ba-stepper__line"></div>
             <div className="ba-stepper__item ba-stepper__item--done">
               <div className="ba-stepper__icon">
-                <span className="icon"><FileText size={18} /></span>
+                <img src="/icons/Group.svg" alt="Contract" />
               </div>
               <div className="ba-stepper__dot"></div>
               <span className="ba-stepper__label">ارسال قرارداد</span>
             </div>
-            <div className="ba-stepper__line ba-stepper__line--green"></div>
+            <div className="ba-stepper__line"></div>
             <div className="ba-stepper__item ba-stepper__item--active">
               <div className="ba-stepper__icon">
-                <span className="icon"><CreditCard size={18} /></span>
+                <img src="/icons/Vector (2).svg" alt="Bank" />
               </div>
               <div className="ba-stepper__dot"></div>
               <span className="ba-stepper__label">ثبت شماره حساب</span>
             </div>
             <div className="ba-stepper__line"></div>
-            <div className="ba-stepper__item ba-stepper__item--future">
+            <div className="ba-stepper__item">
               <div className="ba-stepper__icon">
-                <span className="icon"><Upload size={18} /></span>
+                <img src="/icons/Vector (3).svg" alt="Docs" />
               </div>
               <div className="ba-stepper__dot"></div>
               <span className="ba-stepper__label">ارسال مدارک</span>
@@ -207,19 +207,7 @@ const BankAccountPage: React.FC = () => {
 
           {/* Two Column Layout */}
           <div className="ba-grid">
-            {/* Left Column - Notice Card */}
-            <aside className="ba-notice-card">
-              <h3 className="ba-notice-title">دقت کنید</h3>
-              <ul className="ba-notice-list">
-                <li>لطفا شماره شبای حساب خود را بدون فاصله و خط تیره وارد نمایید</li>
-                <li>برای دریافت شماره شبای حساب خود می توانید به سایت بانک خود مراجعه کنید</li>
-              </ul>
-              <div className="ba-alert">
-                <p>مسئولیت اشتباه بودن اطلاعات بر عهده خود کاربر می باشد و مبلغ واریزی قابل بازگشت نمیباشد.</p>
-              </div>
-            </aside>
-
-            {/* Right Column - Form Card */}
+            {/* RIGHT Column - Form Card */}
             <section className="ba-form-card">
               <h2 className="ba-form-title">اطلاعات حساب بانکی</h2>
               
@@ -330,6 +318,18 @@ const BankAccountPage: React.FC = () => {
                 </button>
               </form>
             </section>
+
+            {/* LEFT Column - Warning Card */}
+            <aside className="ba-warning-card">
+              <h3 className="ba-warning-title">دقت کنید</h3>
+              <ul className="ba-warning-list">
+                <li>لطفا شماره شبای حساب خود را بدون فاصله و خط تیره وارد نمایید</li>
+                <li>برای دریافت شماره شبای حساب خود می توانید به سایت بانک خود مراجعه کنید</li>
+              </ul>
+              <div className="ba-warning-box">
+                <p>مسئولیت اشتباه بودن اطلاعات بر عهده خود کاربر می باشد و مبلغ واریزی قابل بازگشت نمیباشد.</p>
+              </div>
+            </aside>
           </div>
         </div>
       </main>

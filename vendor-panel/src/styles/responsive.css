@@ -7,9 +7,9 @@
   --breakpoint-lg: 1280px;
 }
 
-/* Container Responsive Classes */
+/* Container Responsive Classes - DEPRECATED - Use .container from base.css */
 .container-responsive {
-  max-width: 1280px;
+  /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -305,7 +305,7 @@
   }
   
   .container-responsive {
-    max-width: none;
+    /* max-width: none; - REMOVED: conflicts with new layout system */
     padding: 0;
   }
   

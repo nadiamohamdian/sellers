@@ -343,7 +343,7 @@
 
 .layout-content {
   flex: 1;
-  max-width: 1280px;
+  /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   margin: 0 auto;
   padding: 24px;
   width: 100%;
@@ -353,7 +353,7 @@
 /* xl: 1280px+ - Default desktop */
 @media (min-width: 1280px) {
   .layout-content {
-    max-width: 1280px;
+    /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   }
 }
 

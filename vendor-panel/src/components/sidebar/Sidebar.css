@@ -1,187 +1,322 @@
-/* Sidebar Styles - Dashboard Navigation */
+/* Sidebar Styles - Dashboard Navigation - Fixed Header */
 
 .sidebar {
   width: 320px;
   height: 100vh;
   background: #FFFFFF;
-  border-left: 1px solid #E5E7EB;
+  border-left: 1px solid #EEF1F5;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 100;
-  direction: rtl;
+  position: relative;
+  direction: rtl !important;
   text-align: right;
-  font-family: 'Yekan Bakh', 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
+  font-family: 'IRANSansX', 'IRANYekan', 'Vazirmatn', system-ui, sans-serif;
+  padding: 0;
+  z-index: 1000;
 }
 
-/* Header */
+/* Header Box Inside Sidebar */
 .sidebar-header {
-  padding: 20px;
-  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #EEF1F5;
   background: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
 }
 
-.seller-info {
+.sidebar-header-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-header-link:hover {
+  transform: translateY(-1px);
+}
+
+.sidebar-header-link:hover .pill {
+  background: #1666e6;
+}
+
+.profile-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-}
-
-.seller-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #0F1723;
+  margin-bottom: 12px;
 }
 
 .profile-avatar {
-  position: relative;
   width: 40px;
   height: 40px;
-  background: #0560FD;
   border-radius: 50%;
+  background: #1677FF;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .profile-avatar img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   filter: brightness(0) invert(1);
 }
 
-.notification-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 18px;
-  height: 18px;
-  background: #0560FD;
-  border-radius: 50%;
+.seller-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+  flex: 1;
+}
+
+.profile-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.icon-small {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.icon-small:hover {
+  opacity: 1;
+}
+
+.active-page {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: #1677FF;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
   display: flex;
   align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
   justify-content: center;
-  font-size: 10px;
-  font-weight: bold;
-  color: white;
+}
+
+.active-page:hover {
+  background: #1666e6;
+}
+
+.active-page img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.pill.current-active {
+  background: #1677FF;
+  color: #FFFFFF;
+}
+
+.pill.current-active img {
+  filter: brightness(0) invert(1);
 }
 
 /* Navigation Menu */
 .nav-menu {
   flex: 1;
-  padding: 20px 0;
+  padding: 10px 8px 16px;
   overflow-y: auto;
 }
 
-.nav-category {
-  margin-bottom: 24px;
-}
-
-.category-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-  padding: 0 20px;
-}
-
-.category-dot {
-  color: #0560FD;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.category-title {
-  font-size: 14px;
+.sidebar-section {
+  margin: 14px 8px 8px 8px;
+  color: #98A1AE;
+  font-size: 12px;
+  text-align: right;
   font-weight: 600;
-  color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.nav-item {
-  display: flex;
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.sidebar-item {
+  display: flex !important;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
-  padding: 12px 20px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  line-height: 1.2;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-right: 3px solid transparent;
-  flex-direction: row-reverse;
-  margin: 0 12px;
-  border-radius: 8px;
+  user-select: none;
+  flex-direction: row !important;
+  color: #6B7280;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
 }
 
-.nav-item:hover {
-  background: #F8F9FA;
+.sidebar-item .icon {
+  order: 1;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: #7D868F;
 }
 
-.nav-item.active {
-  background: #0560FD;
-  color: white;
-  border-radius: 8px;
+.sidebar-item .icon img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) saturate(100%) invert(49%) sepia(6%) saturate(692%) hue-rotate(176deg) brightness(96%) contrast(89%);
 }
 
-.nav-item.active .nav-text {
-  color: white;
+.sidebar-item .label {
+  order: 2;
+  flex: 1 1 auto;
+  text-align: right !important;
+  font-size: 14px;
+  color: #6B7280;
 }
 
-.nav-icon {
-  width: 20px;
-  height: 20px;
+/* States */
+.sidebar-item:hover:not(.active) {
+  background: #F3F6FA;
+  color: #3A4451;
+}
+
+.sidebar-item:hover:not(.active) .label {
+  color: #3A4451;
+}
+
+.sidebar-item:hover:not(.active) .icon {
+  color: #3A4451;
+}
+
+.sidebar-item:hover:not(.active) .icon img {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(8%) saturate(692%) hue-rotate(176deg) brightness(96%) contrast(89%);
+}
+
+.sidebar-item.active {
+  background: #1677FF;
+  color: #fff;
+}
+
+.sidebar-item.active .icon {
+  color: #fff;
+}
+
+.sidebar-item.active .icon img {
+  filter: brightness(0) invert(1);
+}
+
+.sidebar-item.active .label {
+  color: #fff;
+}
+
+/* Hard Overrides */
+.sidebar { direction: rtl !important; }
+.sidebar-item { flex-direction: row !important; }
+.sidebar-item .label { text-align: right !important; }
+.sidebar-item .icon { margin: 0 !important; }
+.sidebar [dir="ltr"], .sidebar.ltr { direction: rtl !important; }
+.sidebar-item .left, .sidebar-item .right { float: none !important; }
+.sidebar-item { display: flex !important; }
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Ensure no content goes under sidebar */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* ====================================
+   SB-ITEM STYLES (for information pages)
+   ==================================== */
+
+/* Base styles for sb-item - matching the fixed sidebar items */
+.sb-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.sb-item .sb-ic {
+  order: 1;
+  font-size: 18px;
+  color: #7d868f;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.nav-icon img {
-  width: 18px;
-  height: 18px;
-  filter: grayscale(100%);
-}
-
-.nav-item.active .nav-icon img {
-  filter: brightness(0) invert(1);
-}
-
-.nav-text {
+.sb-item .sb-lb {
+  order: 2;
+  flex: 1 1 auto;
+  text-align: right;
   font-size: 14px;
   font-weight: 500;
-  flex: 1;
-  text-align: right;
-  color: #0F1723;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .sidebar {
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
+.sb-item:hover:not(.active) {
+  background: #f3f6fa;
+  color: #3a4451;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    width: 280px;
-  }
-  
-  .nav-item {
-    padding: 10px 16px;
-    margin: 0 8px;
-  }
-  
-  .nav-text {
-    font-size: 13px;
-  }
-  
-  .category-header {
-    padding: 0 16px;
-  }
+.sb-item:hover:not(.active) .sb-ic {
+  color: #3a4451;
+}
+
+.sb-item.active {
+  background: #1677ff;
+  color: #fff;
+}
+
+.sb-item.active .sb-ic {
+  color: #fff;
+}
+
+/* Ensure Link elements inside sb-item maintain proper styling */
+.sb-item .no-underline {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sb-item.active .no-underline {
+  color: #fff;
+}
+
+.sb-item:hover:not(.active) .no-underline {
+  color: #3a4451;
 }

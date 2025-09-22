@@ -1,6 +1,6 @@
-/* Email Verify Two Column Styles */
+/* Email Verify Two Column Styles - DEPRECATED - Use .container from base.css */
 .evtc-container {
-  max-width: 1280px;
+  /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -356,7 +356,7 @@
 /* xl: 1280px+ - Default desktop */
 @media (min-width: 1280px) {
   .evtc-container {
-    max-width: 1280px;
+    /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   }
 }
 
