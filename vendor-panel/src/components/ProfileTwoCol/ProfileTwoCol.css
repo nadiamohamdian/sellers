@@ -1,6 +1,6 @@
-/* Profile Two Column Styles */
+/* Profile Two Column Styles - DEPRECATED - Use .container from base.css */
 .ptc-container {
-  max-width: 1280px;
+  /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -272,7 +272,7 @@
 /* xl: 1280px+ - Default desktop */
 @media (min-width: 1280px) {
   .ptc-container {
-    max-width: 1280px;
+    /* max-width: 1280px; - REMOVED: conflicts with new layout system */
   }
 }
 

@@ -1,0 +1,222 @@
+/* ====================================
+   CONTRACTS PAGE SPECIFIC STYLES
+   ==================================== */
+
+/* Page header */
+.contracts-header {
+    margin-bottom: 24px;
+}
+
+/* ====================================
+   MAIN CONTENT STYLES
+   ==================================== */
+
+/* Contracts grid */
+.contracts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    width: 100%;
+}
+
+/* Contract card */
+.contract-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Contract preview area */
+.contract-preview {
+    height: 260px;
+    background: #F8FAFD;
+    border: 2px dashed #DCE2EA;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contract-preview::before {
+    content: '📄';
+    font-size: 48px;
+    opacity: 0.3;
+}
+
+/* Contract card title */
+.contract-card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
+    text-align: right;
+}
+
+/* Contract actions */
+.contract-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+@media (max-width: 1200px) {
+    .contracts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .contracts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .contract-preview {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contracts-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .contract-preview {
+        height: 180px;
+    }
+}
+
+/* ====================================
+   HARD OVERRIDES FOR RTL
+   ==================================== */
+
+/* Force RTL for all text elements */
+.contract-card-title,
+.sb-seller-name,
+.sb-header-cta,
+.sb-section-title,
+.sb-rating-title,
+.sb-satisfaction-label,
+.sb-metric-label {
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+/* Ensure contract actions are properly aligned */
+.contract-actions {
+    direction: rtl;
+}
+
+/* Ensure contracts grid is RTL */
+.contracts-grid {
+    direction: rtl !important;
+}
+
+/* Ensure contract cards are RTL */
+.contract-card {
+    direction: rtl !important;
+}
+
+/* ====================================
+   CONTRACT MODAL STYLES
+   ==================================== */
+
+.contract-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contract-modal {
+    background: var(--panel);
+    width: 620px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: auto;
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--line);
+    direction: rtl;
+}
+
+.contract-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 16px 0;
+    text-align: right;
+}
+
+.contract-modal-content {
+    margin-bottom: 24px;
+}
+
+.contract-modal-content p {
+    line-height: 2;
+    text-align: justify;
+    white-space: pre-line;
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+}
+
+.contract-modal-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contract-modal-close-btn {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.contract-modal-close-btn:hover {
+    background: #F9FAFB;
+    border-color: #9CA3AF;
+}
+
+/* Modal responsive design */
+@media (max-width: 768px) {
+    .contract-modal {
+        width: 95vw;
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    .contract-modal-title {
+        font-size: 16px;
+    }
+    
+    .contract-modal-content p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+}

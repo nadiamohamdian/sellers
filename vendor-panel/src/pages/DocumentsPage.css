@@ -1,0 +1,543 @@
+/* src/pages/DocumentsPage.css */
+
+/* ===================================
+   A) PAGE LAYOUT (sidebar on RIGHT)
+   =================================== */
+
+.owner-info-page {
+  direction: rtl;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 24px;
+}
+
+.oi-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* RIGHT: 320px sidebar | LEFT: main */
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Place sidebar in the RIGHT column and main in the LEFT column (RTL page) */
+.oi-sidebar {
+  grid-column: 1;
+}
+
+.oi-main {
+  grid-column: 2;
+}
+
+@media (max-width: 1024px) {
+  .oi-grid {
+    grid-template-columns: 1fr;
+  }
+  .oi-sidebar,
+  .oi-main {
+    grid-column: auto;
+  }
+}
+
+/* ====================================
+   B) SIDEBAR VISUALS (match previous)
+   ==================================== */
+
+.oi-sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Back button */
+.sb-back-button {
+  margin-bottom: 8px;
+}
+
+.sb-back-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  color: #3a4451;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sb-back-btn:hover {
+  background: #f6f7fb;
+  transform: translateY(-1px);
+}
+
+/* Header card (seller name area) */
+.sb-header {
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.sb-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sb-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1677ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-seller-name {
+  text-align: right;
+  font-weight: 600;
+  color: #0b1324;
+  font-size: 14px;
+}
+
+.sb-header-cta {
+  background: #1677ff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Navigation menu */
+.sb-nav {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sb-section-title {
+  margin: 14px 8px 8px;
+  color: #98a1ae;
+  font-size: 12px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.sb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sb-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end; /* pack to RIGHT */
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.sb-item .sb-ic {
+  order: 1;
+  font-size: 18px;
+  color: #7d868f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-item .sb-lb {
+  order: 2;
+  flex: 1 1 auto;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sb-item:hover:not(.active) {
+  background: #f3f6fa;
+  color: #3a4451;
+}
+
+.sb-item:hover:not(.active) .sb-ic {
+  color: #3a4451;
+}
+
+.sb-item.active {
+  background: #1677ff;
+  color: #fff;
+}
+
+.sb-item.active .sb-ic {
+  color: #fff;
+}
+
+/* Rating/Score section */
+.sb-rating {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sb-rating-title {
+  color: #0b1324;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.sb-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.sb-star-count {
+  margin-right: auto;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sb-satisfaction {
+  margin-bottom: 16px;
+}
+
+.sb-satisfaction-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.sb-progress-bar {
+  height: 6px;
+  background: #e6e8ee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.sb-progress-fill {
+  height: 100%;
+  background: #1677ff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.sb-satisfaction-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sb-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.sb-metric {
+  background: #f6f7fb;
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.sb-metric-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1324;
+  margin-bottom: 4px;
+}
+
+.sb-metric-label {
+  font-size: 10px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ===================================================
+   C) MAIN CONTENT STYLING
+   =================================================== */
+
+.oi-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Title section */
+.docs-title-section {
+  margin-bottom: 16px;
+}
+
+.docs-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0b1324;
+  text-align: right;
+  margin: 0;
+  border-bottom: 2px solid #1677ff;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+/* Description */
+.docs-description {
+  margin-bottom: 24px;
+}
+
+.docs-description p {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: right;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Documents content */
+.docs-content {
+  /* Content area */
+}
+
+.docs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Document Row */
+.doc-row {
+  background: #f6f7fb;
+  border: 1px solid #e6e8ee;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1324;
+  margin: 0 0 8px 0;
+  text-align: right;
+}
+
+.doc-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+  text-align: right;
+}
+
+.doc-actions {
+  flex-shrink: 0;
+}
+
+/* Upload button for non-uploaded documents */
+.doc-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1677ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc-upload-btn:hover {
+  background: #1666e6;
+  transform: translateY(-1px);
+}
+
+/* Uploaded document state */
+.doc-uploaded {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.doc-file-name {
+  font-size: 14px;
+  color: #0b1324;
+  font-weight: 500;
+  text-align: right;
+}
+
+.doc-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.doc-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.view-btn {
+  background: #e6f3ff;
+  color: #1677ff;
+}
+
+.view-btn:hover {
+  background: #d1e7ff;
+}
+
+.download-btn {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+
+.download-btn:hover {
+  background: #dcfce7;
+}
+
+/* =======================================
+   D) HARD OVERRIDES (kill conflicting CSS)
+   ======================================= */
+
+/* Remove legacy LTR / reverse rules that cause misplacement */
+.owner-info-page [dir="ltr"],
+.oi-sidebar.ltr,
+.oi-grid.ltr {
+  direction: rtl !important;
+}
+
+.sb-item {
+  flex-direction: row !important;
+}
+
+.sb-item .sb-lb {
+  text-align: right !important;
+}
+
+.sb-item .sb-ic {
+  margin: 0 !important;
+}
+
+.sb-item .left,
+.sb-item .right {
+  float: none !important;
+}
+
+.sb-item {
+  display: flex !important;
+} /* force flex over any grid */
+
+/* Ensure no global `row-reverse` on layout */
+.oi-grid {
+  flex-direction: row !important;
+}
+
+/* Force RTL for all text elements */
+.owner-info-page * {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Override any LTR positioning */
+.oi-sidebar {
+  order: 1 !important;
+}
+
+.oi-main {
+  order: 2 !important;
+}
+
+/* Ensure proper icon and label positioning */
+.sb-item .sb-ic {
+  order: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sb-item .sb-lb {
+  order: 2 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Override any global flex-reverse */
+.sb-item,
+.sb-list,
+.sb-nav {
+  flex-direction: row !important;
+}
+
+.sb-list {
+  flex-direction: column !important;
+}
+
+.sb-item {
+  flex-direction: row !important;
+}
+
+/* Ensure proper grid column placement */
+@media (min-width: 1025px) {
+  .oi-sidebar {
+    grid-column: 1 !important;
+  }
+  
+  .oi-main {
+    grid-column: 2 !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .doc-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .doc-actions {
+    align-self: flex-start;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import SellerShell from "../layouts/SellerShell";
 import { 
   User, 
   Cloud, 
@@ -26,6 +27,7 @@ import "./SendDocumentsPage.css";
 const SendDocumentsPage: React.FC = () => {
   const navigate = useNavigate();
   const [personType, setPersonType] = useState<'real' | 'legal'>('real');
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     province: '',
     city: '',
@@ -52,108 +54,125 @@ const SendDocumentsPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Send documents submitted');
-    // Set onboarded flag and navigate to dashboard
-    localStorage.setItem("onboarded", "1");
-    navigate('/dashboard');
+    if (submitting) return;
+    
+    setSubmitting(true);
+    
+    try {
+      // TODO: Add your validations and upload logic here
+      // await api.saveDocuments(formData);
+      console.log('Send documents submitted', formData);
+      
+      // Set onboarded flag and navigate to dashboard
+      localStorage.setItem("onboarded", "1");
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error submitting documents:', error);
+      // Handle error (show toast, etc.)
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <div className="sd-layout">
+    <SellerShell title="ارسال مدارک">
       {/* Sidebar */}
-      <aside className="sd-sidebar">
-        <div className="sd-sidebar__header">
-          <div className="sd-sidebar__avatar">
-            <span className="icon"><User size={18} /></span>
-            <div className="sd-sidebar__badge">24</div>
+      <aside className="ba-sidebar ba-sidebar--blurred">
+        <div className="ba-sidebar__header">
+          <div className="ba-sidebar__avatar">
+            <img src="/icons/Group 45650.svg" alt="User" className="ba-sidebar__avatar-icon" />
+            <div className="ba-sidebar__badge">24</div>
           </div>
-          <span className="sd-sidebar__name">نام فروشنده</span>
-          <button className="sd-sidebar__dashboard-btn">
-            <span className="icon"><Cloud size={18} /></span>
-            پیشخوان
-          </button>
+          <span className="ba-sidebar__name">نام فروشنده</span>
         </div>
         
-        <nav className="sd-sidebar__nav">
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">جستجو و ثبت کالا</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><Package size={18} /></span>
-                <span className="sd-sidebar__text">مدیریت کالا و افزودن تنوع</span>
+        <nav className="ba-sidebar__nav">
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">کالا</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item ba-sidebar__item--active">
+                <img src="/icons/Group 45698.svg" alt="Dashboard" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">پیشخوان</span>
               </li>
-              <li className="sd-sidebar__item">
-                <span className="icon"><Tag size={18} /></span>
-                <span className="sd-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45699.svg" alt="Search" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">جستجو و ثبت کالا</span>
               </li>
-              <li className="sd-sidebar__item">
-                <span className="icon"><BarChart3 size={18} /></span>
-                <span className="sd-sidebar__text">گزارش موجودی کالا</span>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45700.svg" alt="Manage" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">مدیریت کالا و افزودن تنوع</span>
               </li>
-            </ul>
-          </div>
-
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">سفارش ها</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><ClipboardList size={18} /></span>
-                <span className="sd-sidebar__text">مدیریت سفارشات جاری</span>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45701.svg" alt="Pricing" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">مدیریت تنوع و قیمت گذاری</span>
               </li>
-              <li className="sd-sidebar__item">
-                <span className="icon"><Clock size={18} /></span>
-                <span className="sd-sidebar__text">تاریخچه سفارشات</span>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45702.svg" alt="Inventory" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">گزارش موجودی کالا</span>
               </li>
             </ul>
           </div>
 
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">مالی</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><Receipt size={18} /></span>
-                <span className="sd-sidebar__text">صورتحساب ها</span>
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">سفارش‌ها</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45703.svg" alt="Orders" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">مدیریت سفارشات جاری</span>
+              </li>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45704.svg" alt="History" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">تاریخچه سفارشات</span>
               </li>
             </ul>
           </div>
 
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">تحلیل عملکرد</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><TrendingUp size={18} /></span>
-                <span className="sd-sidebar__text">فروش و درآمد</span>
-              </li>
-              <li className="sd-sidebar__item">
-                <span className="icon"><RotateCcw size={18} /></span>
-                <span className="sd-sidebar__text">مرجوعی</span>
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">مالی</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45705.svg" alt="Invoices" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">صورتحساب ها</span>
               </li>
             </ul>
           </div>
 
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">راهنما</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><BookOpen size={18} /></span>
-                <span className="sd-sidebar__text">مرکز آموزش فروشندگان</span>
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">تحلیل عملکرد</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45707.svg" alt="Sales" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">فروش و درآمد</span>
               </li>
-              <li className="sd-sidebar__item">
-                <span className="icon"><AlertTriangle size={18} /></span>
-                <span className="sd-sidebar__text">کالاهای غیرمجاز</span>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45708.svg" alt="Returns" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">مرجوعی</span>
               </li>
             </ul>
           </div>
 
-          <div className="sd-sidebar__section">
-            <h3 className="sd-sidebar__section-title">پشتیبانی</h3>
-            <ul className="sd-sidebar__list">
-              <li className="sd-sidebar__item">
-                <span className="icon"><Headphones size={18} /></span>
-                <span className="sd-sidebar__text">درخواست پشتیبانی</span>
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">راهنما</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45709.svg" alt="Training" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">مرکز آموزش فروشندگان</span>
+              </li>
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45710.svg" alt="Prohibited" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">کالاهای غیر مجاز</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="ba-sidebar__section">
+            <h3 className="ba-sidebar__section-title">پشتیبانی</h3>
+            <ul className="ba-sidebar__list">
+              <li className="ba-sidebar__item">
+                <img src="/icons/Group 45711.svg" alt="Support" className="ba-sidebar__icon" />
+                <span className="ba-sidebar__text">درخواست پشتیبانی</span>
               </li>
             </ul>
           </div>
@@ -161,46 +180,46 @@ const SendDocumentsPage: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="sd-main">
+      <main className="sd-main" style={{background: "transparent", border: "none", borderRadius: "0", padding: "0"}}>
         {/* Content */}
         <div className="sd-content">
           {/* Stepper */}
           <section className="sd-stepper">
             <div className="sd-stepper__item sd-stepper__item--done">
               <div className="sd-stepper__icon">
-                <span className="icon"><User size={18} /></span>
+                <img src="/icons/PROfile.svg" alt="Profile" />
               </div>
               <div className="sd-stepper__dot"></div>
               <span className="sd-stepper__label">پروفایل</span>
             </div>
-            <div className="sd-stepper__line sd-stepper__line--green"></div>
+            <div className="sd-stepper__line"></div>
             <div className="sd-stepper__item sd-stepper__item--done">
               <div className="sd-stepper__icon">
-                <span className="icon"><Mail size={18} /></span>
+                <img src="/icons/Vector (1).svg" alt="Email" />
               </div>
               <div className="sd-stepper__dot"></div>
               <span className="sd-stepper__label">تایید ایمیل</span>
             </div>
-            <div className="sd-stepper__line sd-stepper__line--green"></div>
+            <div className="sd-stepper__line"></div>
             <div className="sd-stepper__item sd-stepper__item--done">
               <div className="sd-stepper__icon">
-                <span className="icon"><FileText size={18} /></span>
+                <img src="/icons/Group.svg" alt="Contract" />
               </div>
               <div className="sd-stepper__dot"></div>
               <span className="sd-stepper__label">ارسال قرارداد</span>
             </div>
-            <div className="sd-stepper__line sd-stepper__line--green"></div>
+            <div className="sd-stepper__line"></div>
             <div className="sd-stepper__item sd-stepper__item--done">
               <div className="sd-stepper__icon">
-                <span className="icon"><CreditCard size={18} /></span>
+                <img src="/icons/Vector (2).svg" alt="Bank" />
               </div>
               <div className="sd-stepper__dot"></div>
               <span className="sd-stepper__label">ثبت شماره حساب</span>
             </div>
-            <div className="sd-stepper__line sd-stepper__line--green"></div>
+            <div className="sd-stepper__line"></div>
             <div className="sd-stepper__item sd-stepper__item--active">
               <div className="sd-stepper__icon">
-                <span className="icon"><Upload size={18} /></span>
+                <img src="/icons/Vector (3).svg" alt="Docs" />
               </div>
               <div className="sd-stepper__dot"></div>
               <span className="sd-stepper__label">ارسال مدارک</span>
@@ -349,9 +368,13 @@ const SendDocumentsPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <button type="submit" className="sd-btn sd-btn-primary">
+                  <button 
+                    type="submit" 
+                    className="sd-btn sd-btn-primary"
+                    disabled={submitting}
+                  >
                     <span className="sd-btn-icon">✓</span>
-                    ثبت اطلاعات
+                    {submitting ? 'در حال ارسال...' : 'ثبت اطلاعات'}
                   </button>
                 </form>
               </section>
@@ -388,7 +411,7 @@ const SendDocumentsPage: React.FC = () => {
           </div>
         </div>
       </main>
-    </div>
+    </SellerShell>
   );
 };
 

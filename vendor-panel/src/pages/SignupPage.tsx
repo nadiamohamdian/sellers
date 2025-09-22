@@ -42,7 +42,7 @@ const SignupPage: React.FC = () => {
         </div>
         <div className="sp-field">
           <label htmlFor="n-birth" className="sp-field__label">تاریخ تولد</label>
-          <input id="n-birth" type="date" className="sp-input" />
+          <input id="n-birth" type="text" className="sp-input" placeholder="mm/dd/yyyy" />
         </div>
         <div className="sp-field">
           <label htmlFor="n-gender" className="sp-field__label">جنسیت</label>
@@ -69,6 +69,10 @@ const SignupPage: React.FC = () => {
           <input id="l-company" type="text" className="sp-input" />
         </div>
         <div className="sp-field">
+          <label htmlFor="l-lastname" className="sp-field__label">نام خانوادگی</label>
+          <input id="l-lastname" type="text" className="sp-input" />
+        </div>
+        <div className="sp-field">
           <label htmlFor="l-nid" className="sp-field__label">شناسه ملی شرکت</label>
           <input id="l-nid" type="text" className="sp-input" />
         </div>
@@ -77,29 +81,16 @@ const SignupPage: React.FC = () => {
           <input id="l-display" type="text" className="sp-input" />
         </div>
         <div className="sp-field">
-          <label htmlFor="l-industry" className="sp-field__label">زمینه فعالیت</label>
-          <select id="l-industry" className="sp-input">
+          <label htmlFor="l-birth" className="sp-field__label">تاریخ تولد</label>
+          <input id="l-birth" type="text" className="sp-input" placeholder="mm/dd/yyyy" />
+        </div>
+        <div className="sp-field">
+          <label htmlFor="l-gender" className="sp-field__label">جنسیت</label>
+          <select id="l-gender" className="sp-input">
             <option value="">انتخاب کنید</option>
-            <option value="cosmetics">آرایشی و بهداشتی</option>
-            <option value="digital">کالای دیجیتال</option>
-            <option value="tools">ابزار و یراق</option>
+            <option value="female">زن</option>
+            <option value="male">مرد</option>
           </select>
-        </div>
-        <div className="sp-field">
-          <label htmlFor="l-field1" className="sp-field__label">فیلد نمونه</label>
-          <input id="l-field1" type="text" className="sp-input" />
-        </div>
-        <div className="sp-field">
-          <label htmlFor="l-field2" className="sp-field__label">فیلد نمونه</label>
-          <input id="l-field2" type="text" className="sp-input" />
-        </div>
-        <div className="sp-field">
-          <label htmlFor="l-field3" className="sp-field__label">فیلد نمونه</label>
-          <input id="l-field3" type="text" className="sp-input" />
-        </div>
-        <div className="sp-field">
-          <label htmlFor="l-field4" className="sp-field__label">فیلد نمونه</label>
-          <input id="l-field4" type="text" className="sp-input" />
         </div>
       </>
     ),
@@ -313,18 +304,18 @@ const SignupPage: React.FC = () => {
 
               <div className="sp-upload-tiles">
                 <div className="sp-upload-tile">
-                  <span className="sp-upload-tile__title">آپلود بنر بزرگ</span>
-                  <span className="sp-upload-tile__hint">۱۲۸۰ × ۳۸۰</span>
+                  <span className="sp-upload-tile__title">آپلود لوگو</span>
+                  <span className="sp-upload-tile__hint">180 × 180</span>
                 </div>
                 <div className="sp-upload-tile">
-                  <span className="sp-upload-tile__title">آپلود لوگو</span>
-                  <span className="sp-upload-tile__hint">۱۸۰ × ۱۸۰</span>
+                  <span className="sp-upload-tile__title">آپلود بنر بزرگ</span>
+                  <span className="sp-upload-tile__hint">1280 × 380</span>
                 </div>
               </div>
 
               <div className="sp-upload-actions">
-                <button className="sp-soft-btn">تغییر شماره موبایل</button>
                 <button className="sp-soft-btn">تغییر رمز عبور</button>
+                <button className="sp-soft-btn">تغییر شماره موبایل</button>
               </div>
             </aside>
         </div>
